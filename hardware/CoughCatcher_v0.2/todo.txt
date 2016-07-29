@@ -1,0 +1,2 @@
+Fix comparator footprint 
+Add Vref decoupling caps back in 

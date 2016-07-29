@@ -1,0 +1,48 @@
+Max9912 (200 khz GBWP, 4 uA)
+
+???
+R1 = 270k 
+R3 = 1.5k 
+R7 = 2.2Meg
+C3, C4 = 47pF
+R2 shorted
+Fc_sim = 19 kHz
+Gain_sim = 4.7 dB 
+Reality: oscillates? something wrong with soldering or resistor values
+
+---------------------------------
+
+Max9914 (1 Mhz, 20 uA, blue tape)
+General obs: Center frequency in simulation works well, but gain is hard to add since gain margin is only 10 dB
+
+Works
+R1 = 2.2 meg 
+R3 = 2.7k 
+R7 = 4.7 meg 
+C3, C4 = 47 pF
+R2 shorted 
+Fc_sim = 21 kHz
+Gain_sim = .600 dB
+Q_design = 20
+Reality: Fc_sim is about 18.6 kHz, gain sim seems accurate. Hard to tell what actual attenuation is since signal dies 
+quickly. 
+
+WOrks 
+R1 = 750k 
+R3 = 2.7k 
+R7 = 4.7 meg
+C3, C4 = 47 pF 
+Fc_sim = 21 kHz 
+Gain_sim = 10 dB
+Q_design = 20
+Reality: woooo, Fc is about 18.6 kHz, gain is accurate, woo. 
+
+Works 
+R1 = 470k 
+R3 = 1.5k 
+R7 = 10 meg 
+C3, C4 = 47 pF 
+R2 shorted
+Fc_sim = 16.1 
+Gain_sim = 20 db
+Reality: Fc_sim is about 13 kHz, gain is about 9.5 dB. Coincidentally, gain margin is 10 dB

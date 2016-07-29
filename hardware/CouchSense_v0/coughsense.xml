@@ -1,0 +1,2129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/home/wwhuang/Dropbox/git/CoughSense/hardware/CouchSense_v0/coughsense.sch</source>
+    <date>Mon 01 Feb 2016 07:02:53 PM EST</date>
+    <tool>Eeschema 0.201602010916+6529~42~ubuntu15.10.1-product</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>coughsense.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+    <sheet number="2" name="/SPU0410LR5H/" tstamps="/568D47D6/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>couchsense_SPU0410LR5H.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="U9">
+      <value>ADP160AUJZ-1.2-R7</value>
+      <footprint>lab11-ic:TSOT-5</footprint>
+      <datasheet>http://www.analog.com/media/en/technical-documentation/data-sheets/ADP160_161_162_163.pdf</datasheet>
+      <libsource lib="lab11_ldo" part="ADP160AUJZ-1.2-R7"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56717216</tstamp>
+    </comp>
+    <comp ref="C25">
+      <value>C_1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Capacitance">1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10896-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_1u_0402_10V_10%_JB"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56722389</tstamp>
+    </comp>
+    <comp ref="C30">
+      <value>C_1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Capacitance">1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10896-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_1u_0402_10V_10%_JB"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56722468</tstamp>
+    </comp>
+    <comp ref="U2">
+      <value>MCP73831T-2ACI/OT</value>
+      <footprint>lab11-ic:SOT-23-5</footprint>
+      <datasheet>http://ww1.microchip.com/downloads/en/DeviceDoc/20001984g.pdf</datasheet>
+      <fields>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">MCP73831T-2ACI/OTCT-ND</field>
+      </fields>
+      <libsource lib="lab11_battery_chargers" part="MCP73831T-2ACI/OT"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>568FDB59</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>C_4.7u_0402_10V_10%_X5R</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">4.7uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-8023-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_4.7u_0402_10V_10%_X5R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>568FDB63</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>C_4.7u_0402_10V_10%_X5R</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">4.7uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-8023-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_4.7u_0402_10V_10%_X5R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>568FDB6D</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>R_2K_0402_1%,100ppm/c,0.1W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <datasheet>http://industrial.panasonic.com/www-cgi/jvcr13pz.cgi?E+PZ+3+AOA0002+ERJ2RKF2001X+7+WW</datasheet>
+      <fields>
+        <field name="Resistance">2K</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">P2.00KLCT-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_2K_0402_1%,100ppm/c,0.1W"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>568FDB77</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>R_1K_0402_1%,100ppm/c,0.2W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <datasheet>http://www.susumu.co.jp/product_pdf/all-list/e_11.pdf</datasheet>
+      <fields>
+        <field name="Resistance">1K</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">P17224CT-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_1K_0402_1%,100ppm/c,0.2W"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>568FDB8D</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>LED_GREEN_0402_20mA</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <datasheet>http://rohmfs.rohm.com/en/products/databook/datasheet/opto/led/chip_mono/sml-p1.pdf</datasheet>
+      <fields>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">511-1592-1-ND</field>
+      </fields>
+      <libsource lib="lab11_diodes" part="LED_GREEN_0402_20mA"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>568FDB96</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>microUSB-B</value>
+      <footprint>lab11-connectors:MICRO_USB_RECEPTABLE</footprint>
+      <fields>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">609-4616-1-ND	</field>
+      </fields>
+      <libsource lib="lab11_connectors" part="microUSB-B"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>568FF9AA</tstamp>
+    </comp>
+    <comp ref="SW1">
+      <value>CL-SB_13C</value>
+      <footprint>lab11-switches:CL-SB-12C</footprint>
+      <fields>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">563-1322-ND</field>
+      </fields>
+      <libsource lib="lab11_switches" part="CL-SB_13C"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5696F45C</tstamp>
+    </comp>
+    <comp ref="R12">
+      <value>R_0_0402_.1W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <fields>
+        <field name="Resistance">0</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">P0.0JCT-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_0_0402_.1W"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56972609</tstamp>
+    </comp>
+    <comp ref="J2">
+      <value>JST_2_CONN_SIDE</value>
+      <footprint>lab11-connectors:CONN_JST-2_SMD_SIDE</footprint>
+      <fields>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">455-1749-1-ND</field>
+      </fields>
+      <libsource lib="lab11_connectors" part="JST_2_CONN_SIDE"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>569760FC</tstamp>
+    </comp>
+    <comp ref="U8">
+      <value>MAX13035E</value>
+      <footprint>lab11-ic:TQFN-16-4x4mm</footprint>
+      <fields>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">MAX13035EETE+-ND</field>
+      </fields>
+      <libsource lib="lab11_level_shifters" part="MAX13035E"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>569D61AD</tstamp>
+    </comp>
+    <comp ref="J1">
+      <value>MicroSD</value>
+      <footprint>lab11-connectors:2201778-1</footprint>
+      <fields>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">A118117CT-ND</field>
+      </fields>
+      <libsource lib="lab11_connectors" part="MicroSD"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>569EBFAA</tstamp>
+    </comp>
+    <comp ref="R10">
+      <value>R_10k_0402_1%,100ppm/c,0.063W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <fields>
+        <field name="Resistance">10k</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">RHM10.0KCDCT-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_10k_0402_1%,100ppm/c,0.063W"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>569EEA1D</tstamp>
+    </comp>
+    <comp ref="R14">
+      <value>R_200_0402_1%,100ppm/c,0.1W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <fields>
+        <field name="Resistance">200</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">P200LCT-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_200_0402_1%,100ppm/c,0.1W"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>569EEACA</tstamp>
+    </comp>
+    <comp ref="R15">
+      <value>R_10k_0402_1%,100ppm/c,0.063W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <fields>
+        <field name="Resistance">10k</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">RHM10.0KCDCT-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_10k_0402_1%,100ppm/c,0.063W"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>569F1753</tstamp>
+    </comp>
+    <comp ref="P2">
+      <value>CONN_01X02</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_1x02</footprint>
+      <libsource lib="conn" part="CONN_01X02"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>569FFB7A</tstamp>
+    </comp>
+    <comp ref="U3">
+      <value>edison_iot_module</value>
+      <footprint>lab11-mcu:intel_edison_compute_module</footprint>
+      <datasheet>http://download.intel.com/support/edison/sb/edisonmodule_hg_331189004.pdf</datasheet>
+      <fields>
+        <field name="Vendor 1">Mouser</field>
+        <field name="Vendor Part Number 1">607-EDI2.SPON.AL.S</field>
+      </fields>
+      <libsource lib="lab11_mcu" part="edison_iot_module"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5691197E</tstamp>
+    </comp>
+    <comp ref="R16">
+      <value>R_240_0402_1%,100ppm/c,0.063W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <fields>
+        <field name="Resistance">240</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">1276-3965-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_240_0402_1%,100ppm/c,0.063W"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56A00ED1</tstamp>
+    </comp>
+    <comp ref="R17">
+      <value>R_40.2_0402_1%,100ppm/c,0.063W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <fields>
+        <field name="Resistance">40.2</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">RMCF0402FT40R2CT-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_40.2_0402_1%,100ppm/c,0.063W"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56A00F62</tstamp>
+    </comp>
+    <comp ref="R18">
+      <value>R_60.4_0402_1%,100ppm/c,0.1W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <fields>
+        <field name="Resistance">60.4</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">P60.4LCT-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_60.4_0402_1%,100ppm/c,0.1W"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56A00FE5</tstamp>
+    </comp>
+    <comp ref="U13">
+      <value>TXB0104</value>
+      <footprint>lab11-ic:SOIC-14</footprint>
+      <fields>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">296-21929-1-ND</field>
+      </fields>
+      <libsource lib="lab11_level_shifters" part="TXB0104"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56A172CD</tstamp>
+    </comp>
+    <comp ref="C13">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56A188C5</tstamp>
+    </comp>
+    <comp ref="C19">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56A18BB2</tstamp>
+    </comp>
+    <comp ref="R19">
+      <value>R_100K_0402_0.5%,25ppm/c,0.063W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <datasheet>http://www.susumu.co.jp/product_pdf/all-list/e_11.pdf</datasheet>
+      <fields>
+        <field name="Resistance">100K</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">RR05P100KDCT-ND	</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_100K_0402_0.5%,25ppm/c,0.063W"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56A1DB49</tstamp>
+    </comp>
+    <comp ref="C27">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56A1ED21</tstamp>
+    </comp>
+    <comp ref="C28">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56A1EDAC</tstamp>
+    </comp>
+    <comp ref="D2">
+      <value>LED_RGB_0404_10mA</value>
+      <footprint>lab11-passives:0404</footprint>
+      <datasheet>http://rohmfs.rohm.com/en/products/databook/datasheet/opto/led/chip_mono/sml-p11_p-eco.pdf</datasheet>
+      <fields>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">SMLP34RGB2W3CT-ND</field>
+      </fields>
+      <libsource lib="lab11_diodes" part="LED_RGB_0404_10mA"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>56B01037</tstamp>
+    </comp>
+    <comp ref="U4">
+      <value>SPU0410LR5H-QB</value>
+      <footprint>lab11-microphones:SPU0410LR5H-QB</footprint>
+      <datasheet>http://www.knowles.com/download/file?p=SPU0410LR5H.pdf</datasheet>
+      <libsource lib="lab11_microphones" part="SPU0410LR5H-QB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D5392</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D53B2</tstamp>
+    </comp>
+    <comp ref="U6">
+      <value>MIC863</value>
+      <footprint>lab11-ic:SOT-23-8</footprint>
+      <datasheet>www.micrel.com/_PDF/mic863.pdf</datasheet>
+      <libsource lib="lab11_opamps" part="MIC863"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D602C</tstamp>
+    </comp>
+    <comp ref="R7">
+      <value>R_100K_0402_0.5%,25ppm/c,0.063W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <datasheet>http://www.susumu.co.jp/product_pdf/all-list/e_11.pdf</datasheet>
+      <fields>
+        <field name="Resistance">100K</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">RR05P100KDCT-ND	</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_100K_0402_0.5%,25ppm/c,0.063W"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D6042</tstamp>
+    </comp>
+    <comp ref="R9">
+      <value>R_100K_0402_0.5%,25ppm/c,0.063W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <datasheet>http://www.susumu.co.jp/product_pdf/all-list/e_11.pdf</datasheet>
+      <fields>
+        <field name="Resistance">100K</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">RR05P100KDCT-ND	</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_100K_0402_0.5%,25ppm/c,0.063W"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D604C</tstamp>
+    </comp>
+    <comp ref="C20">
+      <value>C_47p_0402_1%_C0G,NP0</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">47pF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">490-6241-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_47p_0402_1%_C0G,NP0"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D605E</tstamp>
+    </comp>
+    <comp ref="R13">
+      <value>R_220K_0402_1%,100ppm/c,0.063W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <fields>
+        <field name="Resistance">220K</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">1276-3453-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_220K_0402_1%,100ppm/c,0.063W"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D6068</tstamp>
+    </comp>
+    <comp ref="R11">
+      <value>R_220K_0402_1%,100ppm/c,0.063W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <fields>
+        <field name="Resistance">220K</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">1276-3453-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_220K_0402_1%,100ppm/c,0.063W"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D6073</tstamp>
+    </comp>
+    <comp ref="C15">
+      <value>C_47p_0402_1%_C0G,NP0</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">47pF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">490-6241-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_47p_0402_1%_C0G,NP0"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D6081</tstamp>
+    </comp>
+    <comp ref="C12">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D6096</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D60A8</tstamp>
+    </comp>
+    <comp ref="C9">
+      <value>C_10u_0603_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Capacitance">10uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-11403-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_10u_0603_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D60B2</tstamp>
+    </comp>
+    <comp ref="W1">
+      <value>TEST_1P</value>
+      <footprint>lab11-connectors:Testpoint</footprint>
+      <libsource lib="conn" part="TEST_1P"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D60C0</tstamp>
+    </comp>
+    <comp ref="W5">
+      <value>TEST_1P</value>
+      <footprint>lab11-connectors:Testpoint</footprint>
+      <libsource lib="conn" part="TEST_1P"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D60C7</tstamp>
+    </comp>
+    <comp ref="W6">
+      <value>TEST_1P</value>
+      <footprint>lab11-connectors:Testpoint</footprint>
+      <libsource lib="conn" part="TEST_1P"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D60CE</tstamp>
+    </comp>
+    <comp ref="U7">
+      <value>MAX11205</value>
+      <footprint>lab11-ic:uSOP-10</footprint>
+      <datasheet>https://datasheets.maximintegrated.com/en/ds/MAX11205.pdf</datasheet>
+      <libsource lib="lab11_adc" part="MAX11205"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D6AB3</tstamp>
+    </comp>
+    <comp ref="C8">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D6ADD</tstamp>
+    </comp>
+    <comp ref="C7">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D6AE7</tstamp>
+    </comp>
+    <comp ref="C18">
+      <value>C_2.2u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">2.2uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10904-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_2.2u_0402_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D6AF9</tstamp>
+    </comp>
+    <comp ref="C21">
+      <value>C_2.2u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">2.2uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10904-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_2.2u_0402_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D6B03</tstamp>
+    </comp>
+    <comp ref="C17">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D6B0D</tstamp>
+    </comp>
+    <comp ref="C16">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D6B17</tstamp>
+    </comp>
+    <comp ref="P1">
+      <value>CONN_01X03</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_1x03</footprint>
+      <libsource lib="conn" part="CONN_01X03"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D6B2B</tstamp>
+    </comp>
+    <comp ref="R4">
+      <value>R_0_0402_.1W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <fields>
+        <field name="Resistance">0</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">P0.0JCT-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_0_0402_.1W"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568D7C3D</tstamp>
+    </comp>
+    <comp ref="C26">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568DFF75</tstamp>
+    </comp>
+    <comp ref="C23">
+      <value>C_10u_0603_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Capacitance">10uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-11403-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_10u_0603_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568E0005</tstamp>
+    </comp>
+    <comp ref="U12">
+      <value>ISL60002CIH312Z-TK</value>
+      <footprint>lab11-ic:ISL60002</footprint>
+      <datasheet>http://www.intersil.com/content/dam/Intersil/documents/isl6/isl60002.pdf</datasheet>
+      <fields>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">ISL60002DIH312Z-TKCT-ND</field>
+      </fields>
+      <libsource lib="lab11_voltage_references" part="ISL60002CIH312Z-TK"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568EB136</tstamp>
+    </comp>
+    <comp ref="C6">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568E99F1</tstamp>
+    </comp>
+    <comp ref="C14">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568E9A9D</tstamp>
+    </comp>
+    <comp ref="U10">
+      <value>SPV1840LR5H-B</value>
+      <footprint>lab11-microphones:SPV1840LR5H-B</footprint>
+      <datasheet>http://www.knowles.com/eng/content/download/3918/49669/version/8/file/SPV1840LR5H-B+Rev+B+Datasheet.pdf</datasheet>
+      <libsource lib="lab11_microphones" part="SPV1840LR5H-B"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568F15F9</tstamp>
+    </comp>
+    <comp ref="U11">
+      <value>ICS-40310</value>
+      <footprint>lab11-microphones:ICS-40310</footprint>
+      <datasheet>http://store.invensense.com/datasheets/invensense/ICS-40310_ProductSpec_V1%200.pdf</datasheet>
+      <libsource lib="lab11_microphones" part="ICS-40310"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568F160C</tstamp>
+    </comp>
+    <comp ref="C22">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568F161C</tstamp>
+    </comp>
+    <comp ref="C24">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568F162A</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>R_0_0402_.1W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <fields>
+        <field name="Resistance">0</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">P0.0JCT-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_0_0402_.1W"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568F6E03</tstamp>
+    </comp>
+    <comp ref="W2">
+      <value>TEST_1P</value>
+      <footprint>lab11-connectors:Testpoint</footprint>
+      <libsource lib="conn" part="TEST_1P"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>568FC2A8</tstamp>
+    </comp>
+    <comp ref="W7">
+      <value>TEST_1P</value>
+      <footprint>lab11-connectors:Testpoint</footprint>
+      <libsource lib="conn" part="TEST_1P"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>56902E2D</tstamp>
+    </comp>
+    <comp ref="W8">
+      <value>TEST_1P</value>
+      <footprint>lab11-connectors:Testpoint</footprint>
+      <libsource lib="conn" part="TEST_1P"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>56903DE9</tstamp>
+    </comp>
+    <comp ref="C5">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>56908923</tstamp>
+    </comp>
+    <comp ref="U5">
+      <value>TS881</value>
+      <footprint>lab11-ic:SC-70-5</footprint>
+      <datasheet>http://www.st.com/web/en/resource/technical/document/datasheet/DM00057901.pdf</datasheet>
+      <fields>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">497-13217-1-ND</field>
+      </fields>
+      <libsource lib="lab11_comparators" part="TS881"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>56908FD5</tstamp>
+    </comp>
+    <comp ref="W4">
+      <value>TEST_1P</value>
+      <footprint>lab11-connectors:Testpoint</footprint>
+      <libsource lib="conn" part="TEST_1P"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>5690AE4A</tstamp>
+    </comp>
+    <comp ref="R6">
+      <value>R_0_0402_.1W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <fields>
+        <field name="Resistance">0</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">P0.0JCT-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_0_0402_.1W"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>5690B66E</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>R_0_0402_.1W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <fields>
+        <field name="Resistance">0</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">P0.0JCT-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_0_0402_.1W"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>5690C5F0</tstamp>
+    </comp>
+    <comp ref="R8">
+      <value>R_0_0402_.1W</value>
+      <footprint>Resistors_SMD:R_0402</footprint>
+      <fields>
+        <field name="Resistance">0</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">P0.0JCT-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="R_0_0402_.1W"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>5690CAC8</tstamp>
+    </comp>
+    <comp ref="C11">
+      <value>C_10u_0603_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Capacitance">10uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-11403-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_10u_0603_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>5690DC2B</tstamp>
+    </comp>
+    <comp ref="C10">
+      <value>C_0.1u_0402_10V_10%_JB</value>
+      <footprint>Capacitors_SMD:C_0402</footprint>
+      <fields>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor Part Number 1">445-10894-1-ND</field>
+      </fields>
+      <libsource lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB"/>
+      <sheetpath names="/SPU0410LR5H/" tstamps="/568D47D6/"/>
+      <tstamp>5690DCB7</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="lab11_ldo" part="ADP160AUJZ-1.2-R7">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ADP160AUJZ-1.2-R7</field>
+        <field name="Footprint">lab11-ic:TSOT-5</field>
+        <field name="Datasheet">http://www.analog.com/media/en/technical-documentation/data-sheets/ADP160_161_162_163.pdf</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">ADP160AUJZ-1.2-R7CT-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN" type="input"/>
+        <pin num="2" name="GND" type="input"/>
+        <pin num="3" name="EN" type="input"/>
+        <pin num="4" name="NC" type="input"/>
+        <pin num="5" name="VOUT" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_switches" part="CL-SB_13C">
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">CL-SB_13C</field>
+        <field name="Footprint">lab11-switches:CL-SB-12C</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">563-1322-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+        <pin num="2" name="2" type="input"/>
+        <pin num="C" name="Common" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="CONN_01X02">
+      <description>Connector 01x02</description>
+      <footprints>
+        <fp>Pin_Header_Straight_1X02</fp>
+        <fp>Pin_Header_Angled_1X02</fp>
+        <fp>Socket_Strip_Straight_1X02</fp>
+        <fp>Socket_Strip_Angled_1X02</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_01X02</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="CONN_01X03">
+      <description>Connector 01x03</description>
+      <footprints>
+        <fp>Pin_Header_Straight_1X03</fp>
+        <fp>Pin_Header_Angled_1X03</fp>
+        <fp>Socket_Strip_Straight_1X03</fp>
+        <fp>Socket_Strip_Angled_1X03</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_01X03</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_rlc" part="C_0.1u_0402_10V_10%_JB">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C?</fp>
+        <fp>C_????_*</fp>
+        <fp>C_????</fp>
+        <fp>SMD*_c</fp>
+        <fp>Capacitor*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_0.1u_0402_10V_10%_JB</field>
+        <field name="Footprint">Capacitors_SMD:C_0402</field>
+        <field name="Capacitance">0.1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">445-10894-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_rlc" part="C_10u_0603_10V_10%_JB">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C?</fp>
+        <fp>C_????_*</fp>
+        <fp>C_????</fp>
+        <fp>SMD*_c</fp>
+        <fp>Capacitor*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_10u_0603_10V_10%_JB</field>
+        <field name="Footprint">Capacitors_SMD:C_0603</field>
+        <field name="Capacitance">10uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">445-11403-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_rlc" part="C_1u_0402_10V_10%_JB">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C?</fp>
+        <fp>C_????_*</fp>
+        <fp>C_????</fp>
+        <fp>SMD*_c</fp>
+        <fp>Capacitor*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_1u_0402_10V_10%_JB</field>
+        <field name="Footprint">Capacitors_SMD:C_0402</field>
+        <field name="Capacitance">1uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">445-10896-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_rlc" part="C_2.2u_0402_10V_10%_JB">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C?</fp>
+        <fp>C_????_*</fp>
+        <fp>C_????</fp>
+        <fp>SMD*_c</fp>
+        <fp>Capacitor*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_2.2u_0402_10V_10%_JB</field>
+        <field name="Footprint">Capacitors_SMD:C_0402</field>
+        <field name="Capacitance">2.2uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">445-10904-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_rlc" part="C_4.7u_0402_10V_10%_X5R">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C?</fp>
+        <fp>C_????_*</fp>
+        <fp>C_????</fp>
+        <fp>SMD*_c</fp>
+        <fp>Capacitor*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_4.7u_0402_10V_10%_X5R</field>
+        <field name="Footprint">Capacitors_SMD:C_0402</field>
+        <field name="Capacitance">4.7uF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">445-8023-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_rlc" part="C_47p_0402_1%_C0G,NP0">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C?</fp>
+        <fp>C_????_*</fp>
+        <fp>C_????</fp>
+        <fp>SMD*_c</fp>
+        <fp>Capacitor*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_47p_0402_1%_C0G,NP0</field>
+        <field name="Footprint">Capacitors_SMD:C_0402</field>
+        <field name="Capacitance">47pF</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">490-6241-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_microphones" part="ICS-40310">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ICS-40310</field>
+        <field name="Footprint">lab11-microphones:ICS-40310</field>
+        <field name="Datasheet">http://store.invensense.com/datasheets/invensense/ICS-40310_ProductSpec_V1%200.pdf</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">1428-1028-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="OUTPUT" type="input"/>
+        <pin num="2" name="GND" type="input"/>
+        <pin num="3" name="VCC" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_voltage_references" part="ISL60002CIH312Z-TK">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ISL60002CIH312Z-TK</field>
+        <field name="Footprint">lab11-ic:ISL60002</field>
+        <field name="Datasheet">http://www.intersil.com/content/dam/Intersil/documents/isl6/isl60002.pdf</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">ISL60002DIH312Z-TKCT-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VCC" type="input"/>
+        <pin num="2" name="Vout" type="input"/>
+        <pin num="3" name="GND" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_connectors" part="JST_2_CONN_SIDE">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">JST_2_CONN_SIDE</field>
+        <field name="Footprint">lab11-connectors:CONN_JST-2_SMD_SIDE</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">455-1749-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+        <pin num="2" name="2" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_diodes" part="LED_GREEN_0402_20mA">
+      <description>Green 0402 LED</description>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED_GREEN_0402_20mA</field>
+        <field name="Footprint">Capacitors_SMD:C_0402</field>
+        <field name="Datasheet">http://rohmfs.rohm.com/en/products/databook/datasheet/opto/led/chip_mono/sml-p1.pdf</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">511-1592-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="input"/>
+        <pin num="2" name="~" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_diodes" part="LED_RGB_0404_10mA">
+      <description>Green 0402 LED</description>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED_RGB_0404_10mA</field>
+        <field name="Footprint">lab11-passives:0404</field>
+        <field name="Datasheet">http://rohmfs.rohm.com/en/products/databook/datasheet/opto/led/chip_mono/sml-p11_p-eco.pdf</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">SMLP34RGB2W3CT-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VCC" type="input"/>
+        <pin num="2" name="~" type="input"/>
+        <pin num="3" name="~" type="input"/>
+        <pin num="4" name="~" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_adc" part="MAX11205">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MAX11205</field>
+        <field name="Footprint">lab11-ic:uSOP-10</field>
+        <field name="Datasheet">https://datasheets.maximintegrated.com/en/ds/MAX11205.pdf</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">MAX11205AEUB+-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="input"/>
+        <pin num="2" name="REFP" type="input"/>
+        <pin num="3" name="REFN" type="input"/>
+        <pin num="4" name="AINN" type="input"/>
+        <pin num="5" name="AINP" type="input"/>
+        <pin num="6" name="AVCC" type="input"/>
+        <pin num="7" name="DVCC" type="input"/>
+        <pin num="8" name="RDY/DOUT" type="input"/>
+        <pin num="9" name="SCLK" type="input"/>
+        <pin num="10" name="CLK" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_level_shifters" part="MAX13035E">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MAX13035E</field>
+        <field name="Footprint">lab11-ic:TQFN-16-4x4mm</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">MAX13035EETE+-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="I/O_VL1" type="input"/>
+        <pin num="2" name="VL" type="input"/>
+        <pin num="3" name="I/O_VL2" type="input"/>
+        <pin num="4" name="I/O_VL3" type="input"/>
+        <pin num="5" name="I/O_VCC2" type="input"/>
+        <pin num="6" name="I/O_VCC3" type="input"/>
+        <pin num="7" name="I/O_VCC4" type="input"/>
+        <pin num="8" name="I/O_VCC5" type="input"/>
+        <pin num="9" name="I/O_VL4" type="input"/>
+        <pin num="10" name="I/O_VL5" type="input"/>
+        <pin num="11" name="CLK_RET" type="input"/>
+        <pin num="12" name="CLK_VL" type="input"/>
+        <pin num="13" name="GND" type="input"/>
+        <pin num="14" name="CLK_VCC" type="input"/>
+        <pin num="15" name="I/O_VCC1" type="input"/>
+        <pin num="16" name="VCC" type="input"/>
+        <pin num="17" name="GND" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_battery_chargers" part="MCP73831T-2ACI/OT">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MCP73831T-2ACI/OT</field>
+        <field name="Footprint">lab11-ic:SOT-23-5</field>
+        <field name="Datasheet">http://ww1.microchip.com/downloads/en/DeviceDoc/20001984g.pdf</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">MCP73831T-2ACI/OTCT-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="STAT" type="input"/>
+        <pin num="2" name="GND" type="input"/>
+        <pin num="3" name="VBAT" type="input"/>
+        <pin num="4" name="VCHARGE" type="input"/>
+        <pin num="5" name="PROG" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_opamps" part="MIC863">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">MIC863</field>
+        <field name="Footprint">lab11-ic:SOT-23-8</field>
+        <field name="Datasheet">www.micrel.com/_PDF/mic863.pdf</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">576-2934-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="OUTA" type="input"/>
+        <pin num="2" name="INA-" type="input"/>
+        <pin num="3" name="INA+" type="input"/>
+        <pin num="4" name="GND" type="input"/>
+        <pin num="5" name="INB+" type="input"/>
+        <pin num="6" name="INB-" type="input"/>
+        <pin num="7" name="OUTB" type="input"/>
+        <pin num="8" name="VCC" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_rlc" part="R_0_0402_.1W">
+      <description>100K 0402 Resistor</description>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_0_0402_.1W</field>
+        <field name="Footprint">Resistors_SMD:R_0402</field>
+        <field name="Resistance">0</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">P0.0JCT-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="R1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_rlc" part="R_100K_0402_0.5%,25ppm/c,0.063W">
+      <description>100K 0402 Resistor</description>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_100K_0402_0.5%,25ppm/c,0.063W</field>
+        <field name="Footprint">Resistors_SMD:R_0402</field>
+        <field name="Datasheet">http://www.susumu.co.jp/product_pdf/all-list/e_11.pdf</field>
+        <field name="Resistance">100K</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">RR05P100KDCT-ND	</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="R1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_rlc" part="R_10k_0402_1%,100ppm/c,0.063W">
+      <description>100K 0402 Resistor</description>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_10k_0402_1%,100ppm/c,0.063W</field>
+        <field name="Footprint">Resistors_SMD:R_0402</field>
+        <field name="Resistance">10k</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">RHM10.0KCDCT-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="R1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_rlc" part="R_1K_0402_1%,100ppm/c,0.2W">
+      <description>100K 0402 Resistor</description>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_1K_0402_1%,100ppm/c,0.2W</field>
+        <field name="Footprint">Resistors_SMD:R_0402</field>
+        <field name="Datasheet">http://www.susumu.co.jp/product_pdf/all-list/e_11.pdf</field>
+        <field name="Resistance">1K</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">P17224CT-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="R1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_rlc" part="R_200_0402_1%,100ppm/c,0.1W">
+      <description>100K 0402 Resistor</description>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_200_0402_1%,100ppm/c,0.1W</field>
+        <field name="Footprint">Resistors_SMD:R_0402</field>
+        <field name="Resistance">200</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">P200LCT-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="R1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_rlc" part="R_220K_0402_1%,100ppm/c,0.063W">
+      <description>100K 0402 Resistor</description>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_220K_0402_1%,100ppm/c,0.063W</field>
+        <field name="Footprint">Resistors_SMD:R_0402</field>
+        <field name="Resistance">220K</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">1276-3453-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="R1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_rlc" part="R_240_0402_1%,100ppm/c,0.063W">
+      <description>100K 0402 Resistor</description>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_240_0402_1%,100ppm/c,0.063W</field>
+        <field name="Footprint">Resistors_SMD:R_0402</field>
+        <field name="Resistance">240</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">1276-3965-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="R1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_rlc" part="R_2K_0402_1%,100ppm/c,0.1W">
+      <description>100K 0402 Resistor</description>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_2K_0402_1%,100ppm/c,0.1W</field>
+        <field name="Footprint">Resistors_SMD:R_0402</field>
+        <field name="Datasheet">http://industrial.panasonic.com/www-cgi/jvcr13pz.cgi?E+PZ+3+AOA0002+ERJ2RKF2001X+7+WW</field>
+        <field name="Resistance">2K</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">P2.00KLCT-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="R1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_rlc" part="R_40.2_0402_1%,100ppm/c,0.063W">
+      <description>100K 0402 Resistor</description>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_40.2_0402_1%,100ppm/c,0.063W</field>
+        <field name="Footprint">Resistors_SMD:R_0402</field>
+        <field name="Resistance">40.2</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">RMCF0402FT40R2CT-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="R1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_rlc" part="R_60.4_0402_1%,100ppm/c,0.1W">
+      <description>100K 0402 Resistor</description>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_60.4_0402_1%,100ppm/c,0.1W</field>
+        <field name="Footprint">Resistors_SMD:R_0402</field>
+        <field name="Resistance">60.4</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">P60.4LCT-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="R1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_connectors" part="SD">
+      <aliases>
+        <alias>MicroSD</alias>
+      </aliases>
+      <footprints>
+        <fp>MICRO_SD*</fp>
+        <fp>SD*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">SD</field>
+        <field name="Footprint">lab11-connectors:2201778-1</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">A118117CT-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="DAT2" type="BiDi"/>
+        <pin num="2" name="CD/DAT3" type="BiDi"/>
+        <pin num="3" name="CMD" type="BiDi"/>
+        <pin num="4" name="VCC" type="BiDi"/>
+        <pin num="5" name="CLK" type="BiDi"/>
+        <pin num="6" name="VSS" type="BiDi"/>
+        <pin num="7" name="DAT0" type="BiDi"/>
+        <pin num="8" name="DAT1" type="BiDi"/>
+        <pin num="9" name="SWA" type="input"/>
+        <pin num="10" name="SWB" type="input"/>
+        <pin num="11" name="GND" type="BiDi"/>
+        <pin num="12" name="GND" type="BiDi"/>
+        <pin num="13" name="GND" type="BiDi"/>
+        <pin num="14" name="GND" type="BiDi"/>
+        <pin num="15" name="GND" type="BiDi"/>
+        <pin num="16" name="GND" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_microphones" part="SPU0410LR5H-QB">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SPU0410LR5H-QB</field>
+        <field name="Footprint">lab11-microphones:SPU0410LR5H-QB</field>
+        <field name="Datasheet">http://www.knowles.com/download/file?p=SPU0410LR5H.pdf</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">423-1139-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Output" type="output"/>
+        <pin num="2" name="GND" type="input"/>
+        <pin num="3" name="GND" type="input"/>
+        <pin num="4" name="Vcc" type="input"/>
+        <pin num="5" name="GND" type="input"/>
+        <pin num="6" name="GND" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_microphones" part="SPV1840LR5H-B">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SPV1840LR5H-B</field>
+        <field name="Footprint">lab11-microphones:SPV1840LR5H-B</field>
+        <field name="Datasheet">http://www.knowles.com/eng/content/download/3918/49669/version/8/file/SPV1840LR5H-B+Rev+B+Datasheet.pdf</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">423-1397-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Vcc" type="power_in"/>
+        <pin num="2" name="Output" type="output"/>
+        <pin num="3" name="GND" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="TEST_1P">
+      <description>point</description>
+      <fields>
+        <field name="Reference">W</field>
+        <field name="Value">TEST_1P</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_comparators" part="TS881">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TS881</field>
+        <field name="Footprint">lab11-ic:SC-70-5</field>
+        <field name="Datasheet">http://www.st.com/web/en/resource/technical/document/datasheet/DM00057901.pdf</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">497-13217-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="OUT" type="input"/>
+        <pin num="2" name="GND" type="input"/>
+        <pin num="3" name="IN+" type="input"/>
+        <pin num="4" name="IN-" type="input"/>
+        <pin num="5" name="VCC" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_level_shifters" part="TXB0104">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TXB0104</field>
+        <field name="Footprint">lab11-ic:SOIC-14</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">296-21929-1-ND</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Vcca" type="input"/>
+        <pin num="2" name="A1" type="input"/>
+        <pin num="3" name="A2" type="input"/>
+        <pin num="4" name="A3" type="input"/>
+        <pin num="5" name="A4" type="input"/>
+        <pin num="6" name="NC" type="input"/>
+        <pin num="7" name="GND" type="input"/>
+        <pin num="8" name="OE" type="input"/>
+        <pin num="9" name="NC" type="input"/>
+        <pin num="10" name="B4" type="input"/>
+        <pin num="11" name="B3" type="input"/>
+        <pin num="12" name="B2" type="input"/>
+        <pin num="13" name="B1" type="input"/>
+        <pin num="14" name="Vccb" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_mcu" part="edison_iot_module">
+      <description>Intel Edison Connection</description>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">edison_iot_module</field>
+        <field name="Footprint">lab11-mcu:intel_edison_compute_module</field>
+        <field name="Datasheet">http://download.intel.com/support/edison/sb/edisonmodule_hg_331189004.pdf</field>
+        <field name="Vendor 1">Mouser</field>
+        <field name="Vendor 1 Part Number">607-EDI2.SPON.AL.S</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="power_in"/>
+        <pin num="2" name="VSYS" type="power_in"/>
+        <pin num="3" name="USB_ID" type="input"/>
+        <pin num="4" name="VSYS" type="power_in"/>
+        <pin num="5" name="GND" type="power_in"/>
+        <pin num="6" name="VSYS" type="power_in"/>
+        <pin num="7" name="MSIC_SLP_CLK" type="input"/>
+        <pin num="8" name="3.3V" type="power_in"/>
+        <pin num="9" name="GND" type="power_in"/>
+        <pin num="10" name="3.3V" type="power_in"/>
+        <pin num="11" name="GND" type="power_in"/>
+        <pin num="12" name="1.8V" type="power_in"/>
+        <pin num="13" name="GND" type="power_in"/>
+        <pin num="14" name="DCIN" type="power_in"/>
+        <pin num="15" name="GND" type="power_in"/>
+        <pin num="16" name="USB_DP" type="BiDi"/>
+        <pin num="17" name="PWRBTN#" type="input"/>
+        <pin num="18" name="USB_DN" type="BiDi"/>
+        <pin num="19" name="FAULT" type="input"/>
+        <pin num="20" name="USB_VBUS" type="power_in"/>
+        <pin num="21" name="PSW" type="input"/>
+        <pin num="22" name="GP134_UART_2_RX" type="BiDi"/>
+        <pin num="23" name="V_VAT_BKUP" type="power_in"/>
+        <pin num="24" name="GP44" type="BiDi"/>
+        <pin num="25" name="GP165" type="BiDi"/>
+        <pin num="26" name="GP45" type="BiDi"/>
+        <pin num="27" name="GP135_UART_2_TX" type="BiDi"/>
+        <pin num="28" name="GP46" type="BiDi"/>
+        <pin num="30" name="GP47" type="BiDi"/>
+        <pin num="31" name="RCVR_MODE" type="input"/>
+        <pin num="32" name="GP48" type="BiDi"/>
+        <pin num="33" name="GP13_PWM1" type="BiDi"/>
+        <pin num="34" name="GP49" type="BiDi"/>
+        <pin num="35" name="GP12_PWM0" type="BiDi"/>
+        <pin num="36" name="RESET_OUT#" type="output"/>
+        <pin num="37" name="GP182_PWM2" type="BiDi"/>
+        <pin num="39" name="GP183_PWM3" type="BiDi"/>
+        <pin num="41" name="GP19_I2C_1_SCL" type="BiDi"/>
+        <pin num="42" name="GP15" type="BiDi"/>
+        <pin num="43" name="GP20_I2C_1_SDA" type="BiDi"/>
+        <pin num="44" name="GP84_SD_CLK_FB" type="BiDi"/>
+        <pin num="45" name="GP27_I2C_6_SCL" type="BiDi"/>
+        <pin num="46" name="GP131_UART_1_TX" type="BiDi"/>
+        <pin num="47" name="GP28_I2C_6_SDA" type="BiDi"/>
+        <pin num="48" name="GP14" type="BiDi"/>
+        <pin num="50" name="GP42_I2S_2_RXD" type="BiDi"/>
+        <pin num="51" name="GP111_SPI_2_FS1" type="BiDi"/>
+        <pin num="52" name="GP40_I2S_2_CLK" type="BiDi"/>
+        <pin num="53" name="GP110_SPI_2_FS0" type="BiDi"/>
+        <pin num="54" name="GP41_I2S_2_FS" type="BiDi"/>
+        <pin num="55" name="GP109_SPI_2_CLK" type="BiDi"/>
+        <pin num="56" name="GP43_I2S_2_TXD" type="BiDi"/>
+        <pin num="57" name="GP115_SPI_2_TXD" type="BiDi"/>
+        <pin num="58" name="GP78_SD_0_CLK" type="BiDi"/>
+        <pin num="59" name="GP114_SPI_2_RXD" type="BiDi"/>
+        <pin num="60" name="GP77_SD_0_CD#" type="BiDi"/>
+        <pin num="61" name="GP130_UART_1_RX" type="BiDi"/>
+        <pin num="62" name="GP79_SD_0_CMD" type="BiDi"/>
+        <pin num="63" name="GP129_UART_1_RTS" type="BiDi"/>
+        <pin num="64" name="GP82_SD_0_DAT2" type="BiDi"/>
+        <pin num="65" name="GP128_UART_1_CTS" type="BiDi"/>
+        <pin num="66" name="GP80_SD_0_DAT0" type="BiDi"/>
+        <pin num="67" name="OSC_CLK_OUT_0" type="output"/>
+        <pin num="68" name="GP83_SD_0_DAT3" type="BiDi"/>
+        <pin num="69" name="FW_RCVR" type="input"/>
+        <pin num="70" name="GP81_SD_0_DAT1" type="BiDi"/>
+      </pins>
+    </libpart>
+    <libpart lib="lab11_connectors" part="microUSB-B">
+      <description>MicroUSB B</description>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">microUSB-B</field>
+        <field name="Footprint">lab11-connectors:MICRO_USB_RECEPTABLE</field>
+        <field name="Vendor 1">Digikey</field>
+        <field name="Vendor 1 Part Number">609-4616-1-ND	</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VBUS" type="input"/>
+        <pin num="2" name="D-" type="input"/>
+        <pin num="3" name="D+" type="input"/>
+        <pin num="4" name="ID" type="input"/>
+        <pin num="5" name="GND" type="input"/>
+        <pin num="6" name="CASE" type="input"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="lab11_microphones">
+      <uri>/home/wwhuang/Dropbox/git/kicad/parts/schematic/lab11_microphones.lib</uri>
+    </library>
+    <library logical="lab11_rlc">
+      <uri>/home/wwhuang/Dropbox/git/kicad/parts/schematic/lab11_rlc.lib</uri>
+    </library>
+    <library logical="lab11_adc">
+      <uri>/home/wwhuang/Dropbox/git/kicad/parts/schematic/lab11_adc.lib</uri>
+    </library>
+    <library logical="lab11_ldo">
+      <uri>/home/wwhuang/Dropbox/git/kicad/parts/schematic/lab11_ldo.lib</uri>
+    </library>
+    <library logical="lab11_mcu">
+      <uri>/home/wwhuang/Dropbox/git/kicad/parts/schematic/lab11_mcu.lib</uri>
+    </library>
+    <library logical="lab11_comparators">
+      <uri>/home/wwhuang/Dropbox/git/kicad/parts/schematic/lab11_comparators.lib</uri>
+    </library>
+    <library logical="lab11_opamps">
+      <uri>/home/wwhuang/Dropbox/git/kicad/parts/schematic/lab11_opamps.lib</uri>
+    </library>
+    <library logical="lab11_diodes">
+      <uri>/home/wwhuang/Dropbox/git/kicad/parts/schematic/lab11_diodes.lib</uri>
+    </library>
+    <library logical="lab11_voltage_references">
+      <uri>/home/wwhuang/Dropbox/git/kicad/parts/schematic/lab11_voltage_references.lib</uri>
+    </library>
+    <library logical="lab11_battery_chargers">
+      <uri>/home/wwhuang/Dropbox/git/kicad/parts/schematic/lab11_battery_chargers.lib</uri>
+    </library>
+    <library logical="lab11_connectors">
+      <uri>/home/wwhuang/Dropbox/git/kicad/parts/schematic/lab11_connectors.lib</uri>
+    </library>
+    <library logical="lab11_switches">
+      <uri>/home/wwhuang/Dropbox/git/kicad/parts/schematic/lab11_switches.lib</uri>
+    </library>
+    <library logical="lab11_level_shifters">
+      <uri>/home/wwhuang/Dropbox/git/kicad/parts/schematic/lab11_level_shifters.lib</uri>
+    </library>
+    <library logical="conn">
+      <uri>/usr/share/kicad/library/conn.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="Net-(U3-Pad51)">
+      <node ref="U3" pin="51"/>
+    </net>
+    <net code="2" name="Net-(U3-Pad41)">
+      <node ref="U3" pin="41"/>
+    </net>
+    <net code="3" name="Net-(U3-Pad31)">
+      <node ref="U3" pin="31"/>
+    </net>
+    <net code="4" name="Net-(U3-Pad21)">
+      <node ref="U3" pin="21"/>
+    </net>
+    <net code="5" name="Net-(U3-Pad11)">
+      <node ref="U3" pin="11"/>
+    </net>
+    <net code="6" name="Net-(U3-Pad50)">
+      <node ref="U3" pin="50"/>
+    </net>
+    <net code="7" name="Net-(U3-Pad30)">
+      <node ref="U3" pin="30"/>
+    </net>
+    <net code="8" name="Net-(U3-Pad9)">
+      <node ref="U3" pin="9"/>
+    </net>
+    <net code="9" name="Net-(U3-Pad7)">
+      <node ref="U3" pin="7"/>
+    </net>
+    <net code="10" name="Net-(U3-Pad61)">
+      <node ref="U3" pin="61"/>
+    </net>
+    <net code="11" name="Net-(U3-Pad5)">
+      <node ref="U3" pin="5"/>
+    </net>
+    <net code="12" name="Net-(U3-Pad3)">
+      <node ref="U3" pin="3"/>
+    </net>
+    <net code="13" name="Net-(U3-Pad43)">
+      <node ref="U3" pin="43"/>
+    </net>
+    <net code="14" name="/EDISON_LED_G">
+      <node ref="U3" pin="39"/>
+      <node ref="R17" pin="2"/>
+    </net>
+    <net code="15" name="Net-(U3-Pad37)">
+      <node ref="U3" pin="37"/>
+    </net>
+    <net code="16" name="/EDISON_LED_R">
+      <node ref="R16" pin="2"/>
+      <node ref="U3" pin="33"/>
+    </net>
+    <net code="17" name="/EDISON_LED_B">
+      <node ref="R18" pin="2"/>
+      <node ref="U3" pin="35"/>
+    </net>
+    <net code="18" name="VCC">
+      <node ref="C10" pin="1"/>
+      <node ref="D2" pin="1"/>
+      <node ref="C28" pin="1"/>
+      <node ref="U10" pin="1"/>
+      <node ref="U5" pin="5"/>
+      <node ref="C21" pin="1"/>
+      <node ref="C17" pin="1"/>
+      <node ref="C12" pin="1"/>
+      <node ref="C9" pin="1"/>
+      <node ref="U7" pin="2"/>
+      <node ref="U7" pin="6"/>
+      <node ref="U7" pin="7"/>
+      <node ref="C19" pin="1"/>
+      <node ref="C11" pin="1"/>
+      <node ref="U9" pin="3"/>
+      <node ref="C25" pin="1"/>
+      <node ref="U9" pin="1"/>
+      <node ref="U8" pin="16"/>
+      <node ref="C22" pin="1"/>
+      <node ref="U13" pin="14"/>
+      <node ref="P2" pin="2"/>
+      <node ref="U12" pin="1"/>
+      <node ref="C23" pin="1"/>
+      <node ref="C3" pin="2"/>
+      <node ref="C16" pin="1"/>
+      <node ref="U6" pin="8"/>
+      <node ref="C26" pin="1"/>
+      <node ref="J1" pin="4"/>
+      <node ref="U4" pin="4"/>
+      <node ref="C18" pin="1"/>
+      <node ref="C7" pin="1"/>
+      <node ref="U3" pin="10"/>
+      <node ref="U3" pin="8"/>
+    </net>
+    <net code="19" name="GND">
+      <node ref="C24" pin="2"/>
+      <node ref="P1" pin="1"/>
+      <node ref="U12" pin="3"/>
+      <node ref="U11" pin="2"/>
+      <node ref="C22" pin="2"/>
+      <node ref="U8" pin="13"/>
+      <node ref="J2" pin="2"/>
+      <node ref="C26" pin="2"/>
+      <node ref="C23" pin="2"/>
+      <node ref="C2" pin="2"/>
+      <node ref="C25" pin="2"/>
+      <node ref="C30" pin="2"/>
+      <node ref="C14" pin="2"/>
+      <node ref="C6" pin="2"/>
+      <node ref="C18" pin="2"/>
+      <node ref="C16" pin="2"/>
+      <node ref="U8" pin="17"/>
+      <node ref="U2" pin="2"/>
+      <node ref="C1" pin="2"/>
+      <node ref="R2" pin="2"/>
+      <node ref="U6" pin="4"/>
+      <node ref="C3" pin="1"/>
+      <node ref="C10" pin="2"/>
+      <node ref="U4" pin="6"/>
+      <node ref="C21" pin="2"/>
+      <node ref="C7" pin="2"/>
+      <node ref="C8" pin="2"/>
+      <node ref="C12" pin="2"/>
+      <node ref="C9" pin="2"/>
+      <node ref="U7" pin="1"/>
+      <node ref="U7" pin="3"/>
+      <node ref="U7" pin="4"/>
+      <node ref="U5" pin="2"/>
+      <node ref="R6" pin="2"/>
+      <node ref="C5" pin="2"/>
+      <node ref="U10" pin="3"/>
+      <node ref="U4" pin="5"/>
+      <node ref="C11" pin="2"/>
+      <node ref="U4" pin="3"/>
+      <node ref="U4" pin="2"/>
+      <node ref="C17" pin="2"/>
+      <node ref="J1" pin="14"/>
+      <node ref="P2" pin="1"/>
+      <node ref="U1" pin="6"/>
+      <node ref="U1" pin="5"/>
+      <node ref="R10" pin="2"/>
+      <node ref="R19" pin="1"/>
+      <node ref="C27" pin="2"/>
+      <node ref="C28" pin="2"/>
+      <node ref="J1" pin="16"/>
+      <node ref="J1" pin="6"/>
+      <node ref="J1" pin="10"/>
+      <node ref="J1" pin="11"/>
+      <node ref="J1" pin="12"/>
+      <node ref="J1" pin="13"/>
+      <node ref="J1" pin="15"/>
+      <node ref="C19" pin="2"/>
+      <node ref="U9" pin="2"/>
+      <node ref="U13" pin="7"/>
+      <node ref="U3" pin="1"/>
+      <node ref="C13" pin="2"/>
+    </net>
+    <net code="20" name="Net-(U3-Pad34)">
+      <node ref="U3" pin="34"/>
+    </net>
+    <net code="21" name="Net-(U3-Pad56)">
+      <node ref="U3" pin="56"/>
+    </net>
+    <net code="22" name="Net-(U3-Pad46)">
+      <node ref="U3" pin="46"/>
+    </net>
+    <net code="23" name="Net-(U3-Pad36)">
+      <node ref="U3" pin="36"/>
+    </net>
+    <net code="24" name="Net-(U3-Pad26)">
+      <node ref="U3" pin="26"/>
+    </net>
+    <net code="25" name="Net-(U3-Pad65)">
+      <node ref="U3" pin="65"/>
+    </net>
+    <net code="26" name="Net-(U3-Pad45)">
+      <node ref="U3" pin="45"/>
+    </net>
+    <net code="27" name="Net-(U3-Pad25)">
+      <node ref="U3" pin="25"/>
+    </net>
+    <net code="28" name="Net-(U3-Pad15)">
+      <node ref="U3" pin="15"/>
+    </net>
+    <net code="29" name="Net-(U3-Pad54)">
+      <node ref="U3" pin="54"/>
+    </net>
+    <net code="30" name="Net-(U3-Pad24)">
+      <node ref="U3" pin="24"/>
+    </net>
+    <net code="31" name="Net-(U3-Pad63)">
+      <node ref="U3" pin="63"/>
+    </net>
+    <net code="32" name="Net-(U3-Pad53)">
+      <node ref="U3" pin="53"/>
+    </net>
+    <net code="33" name="Net-(U3-Pad23)">
+      <node ref="U3" pin="23"/>
+    </net>
+    <net code="34" name="Net-(U3-Pad13)">
+      <node ref="U3" pin="13"/>
+    </net>
+    <net code="35" name="Net-(U3-Pad52)">
+      <node ref="U3" pin="52"/>
+    </net>
+    <net code="36" name="Net-(U3-Pad42)">
+      <node ref="U3" pin="42"/>
+    </net>
+    <net code="37" name="Net-(U3-Pad32)">
+      <node ref="U3" pin="32"/>
+    </net>
+    <net code="38" name="Net-(U3-Pad22)">
+      <node ref="U3" pin="22"/>
+    </net>
+    <net code="39" name="+BATT">
+      <node ref="U3" pin="4"/>
+      <node ref="U3" pin="2"/>
+      <node ref="U2" pin="3"/>
+      <node ref="C2" pin="1"/>
+      <node ref="J2" pin="1"/>
+      <node ref="R14" pin="2"/>
+      <node ref="R12" pin="2"/>
+      <node ref="U3" pin="6"/>
+    </net>
+    <net code="40" name="+1V8">
+      <node ref="U8" pin="2"/>
+      <node ref="U13" pin="1"/>
+      <node ref="C13" pin="1"/>
+      <node ref="R15" pin="1"/>
+      <node ref="U13" pin="8"/>
+      <node ref="R19" pin="2"/>
+      <node ref="U3" pin="12"/>
+      <node ref="C27" pin="1"/>
+    </net>
+    <net code="41" name="/COMP_OUT">
+      <node ref="U5" pin="1"/>
+      <node ref="W4" pin="1"/>
+      <node ref="R8" pin="2"/>
+    </net>
+    <net code="42" name="/EDISON_SD_CD">
+      <node ref="U3" pin="60"/>
+      <node ref="R15" pin="2"/>
+      <node ref="J1" pin="9"/>
+    </net>
+    <net code="43" name="Net-(R10-Pad1)">
+      <node ref="SW1" pin="1"/>
+      <node ref="R10" pin="1"/>
+    </net>
+    <net code="44" name="Net-(R14-Pad1)">
+      <node ref="SW1" pin="2"/>
+      <node ref="R14" pin="1"/>
+    </net>
+    <net code="45" name="/PWRBTN">
+      <node ref="SW1" pin="C"/>
+      <node ref="U3" pin="17"/>
+    </net>
+    <net code="46" name="/EDI_COMP_OUT">
+      <node ref="U3" pin="27"/>
+      <node ref="U13" pin="2"/>
+    </net>
+    <net code="47" name="/EDI_ADC_RDY">
+      <node ref="U3" pin="47"/>
+      <node ref="U3" pin="55"/>
+      <node ref="U13" pin="4"/>
+    </net>
+    <net code="48" name="/ADC_RDY">
+      <node ref="U13" pin="11"/>
+    </net>
+    <net code="49" name="/ADC_SCLK">
+      <node ref="U13" pin="12"/>
+    </net>
+    <net code="50" name="/COMP_OUT">
+      <node ref="U13" pin="13"/>
+    </net>
+    <net code="51" name="/LED_G">
+      <node ref="R17" pin="1"/>
+      <node ref="D2" pin="4"/>
+    </net>
+    <net code="52" name="/LED_B">
+      <node ref="D2" pin="3"/>
+      <node ref="R18" pin="1"/>
+    </net>
+    <net code="53" name="/LED_R">
+      <node ref="R16" pin="1"/>
+      <node ref="D2" pin="2"/>
+    </net>
+    <net code="54" name="Net-(U3-Pad69)">
+      <node ref="U3" pin="69"/>
+    </net>
+    <net code="56" name="/EDI_ADC_SCLK">
+      <node ref="U13" pin="3"/>
+      <node ref="U3" pin="59"/>
+    </net>
+    <net code="57" name="Net-(U3-Pad19)">
+      <node ref="U3" pin="19"/>
+    </net>
+    <net code="58" name="Net-(U3-Pad48)">
+      <node ref="U3" pin="48"/>
+    </net>
+    <net code="59" name="Net-(U3-Pad28)">
+      <node ref="U3" pin="28"/>
+    </net>
+    <net code="60" name="Net-(U3-Pad67)">
+      <node ref="U3" pin="67"/>
+    </net>
+    <net code="61" name="Net-(U3-Pad57)">
+      <node ref="U3" pin="57"/>
+    </net>
+    <net code="62" name="Net-(U13-Pad10)">
+      <node ref="U13" pin="10"/>
+    </net>
+    <net code="63" name="Net-(U13-Pad9)">
+      <node ref="U13" pin="9"/>
+    </net>
+    <net code="64" name="Net-(U13-Pad6)">
+      <node ref="U13" pin="6"/>
+    </net>
+    <net code="65" name="Net-(U13-Pad5)">
+      <node ref="U13" pin="5"/>
+    </net>
+    <net code="66" name="Net-(U1-Pad4)">
+      <node ref="U1" pin="4"/>
+    </net>
+    <net code="67" name="/ADC_SCLK">
+      <node ref="U7" pin="9"/>
+      <node ref="P1" pin="3"/>
+    </net>
+    <net code="68" name="/D+">
+      <node ref="U1" pin="3"/>
+      <node ref="U3" pin="16"/>
+    </net>
+    <net code="69" name="/D-">
+      <node ref="U3" pin="18"/>
+      <node ref="U1" pin="2"/>
+    </net>
+    <net code="70" name="/VBUS">
+      <node ref="U3" pin="20"/>
+      <node ref="R1" pin="1"/>
+      <node ref="C1" pin="1"/>
+      <node ref="U2" pin="4"/>
+      <node ref="U1" pin="1"/>
+    </net>
+    <net code="71" name="Net-(D1-Pad1)">
+      <node ref="R1" pin="2"/>
+      <node ref="D1" pin="1"/>
+    </net>
+    <net code="72" name="Net-(D1-Pad2)">
+      <node ref="D1" pin="2"/>
+      <node ref="U2" pin="1"/>
+    </net>
+    <net code="73" name="/SD_DAT2">
+      <node ref="J1" pin="1"/>
+      <node ref="U8" pin="7"/>
+    </net>
+    <net code="74" name="/SD_DAT1">
+      <node ref="J1" pin="8"/>
+      <node ref="U8" pin="6"/>
+    </net>
+    <net code="75" name="/SD_DAT0">
+      <node ref="J1" pin="7"/>
+      <node ref="U8" pin="15"/>
+    </net>
+    <net code="76" name="/ADC_RDY">
+      <node ref="P1" pin="2"/>
+      <node ref="U7" pin="8"/>
+    </net>
+    <net code="77" name="/SPU0410LR5H/MIC_AMP2_OUT">
+      <node ref="R5" pin="1"/>
+      <node ref="U6" pin="7"/>
+      <node ref="R11" pin="1"/>
+      <node ref="W5" pin="1"/>
+      <node ref="C15" pin="2"/>
+      <node ref="R3" pin="1"/>
+    </net>
+    <net code="78" name="/SPU0410LR5H/MIC_AMP1_OUT">
+      <node ref="R4" pin="2"/>
+      <node ref="W6" pin="1"/>
+      <node ref="U6" pin="1"/>
+      <node ref="C20" pin="1"/>
+      <node ref="R9" pin="2"/>
+    </net>
+    <net code="79" name="+1V2">
+      <node ref="C24" pin="1"/>
+      <node ref="U11" pin="3"/>
+      <node ref="C30" pin="1"/>
+      <node ref="U9" pin="5"/>
+    </net>
+    <net code="80" name="/SPU0410LR5H/ADC_CLK">
+      <node ref="U7" pin="10"/>
+    </net>
+    <net code="81" name="Net-(U9-Pad4)">
+      <node ref="U9" pin="4"/>
+    </net>
+    <net code="82" name="Net-(R2-Pad1)">
+      <node ref="R2" pin="1"/>
+      <node ref="U2" pin="5"/>
+    </net>
+    <net code="83" name="/EDISON_SD_CLK">
+      <node ref="U8" pin="12"/>
+      <node ref="U3" pin="58"/>
+    </net>
+    <net code="84" name="/SD_DAT3">
+      <node ref="U8" pin="5"/>
+      <node ref="J1" pin="2"/>
+    </net>
+    <net code="85" name="/EDISON_SD_CLK_FB">
+      <node ref="U3" pin="44"/>
+      <node ref="U8" pin="11"/>
+    </net>
+    <net code="86" name="/EDISON_SD_CMD">
+      <node ref="U3" pin="62"/>
+      <node ref="U8" pin="10"/>
+    </net>
+    <net code="87" name="/EDISON_SD_DAT2">
+      <node ref="U8" pin="9"/>
+      <node ref="U3" pin="64"/>
+    </net>
+    <net code="88" name="/EDISON_SD_DAT1">
+      <node ref="U3" pin="70"/>
+      <node ref="U8" pin="4"/>
+    </net>
+    <net code="89" name="/EDISON_SD_DAT3">
+      <node ref="U8" pin="3"/>
+      <node ref="U3" pin="68"/>
+    </net>
+    <net code="90" name="/EDISON_SD_DAT0">
+      <node ref="U8" pin="1"/>
+      <node ref="U3" pin="66"/>
+    </net>
+    <net code="91" name="/SD_CLK">
+      <node ref="J1" pin="5"/>
+      <node ref="U8" pin="14"/>
+    </net>
+    <net code="92" name="/SD_CMD">
+      <node ref="J1" pin="3"/>
+      <node ref="U8" pin="8"/>
+    </net>
+    <net code="93" name="/DCIN">
+      <node ref="R12" pin="1"/>
+      <node ref="U3" pin="14"/>
+    </net>
+    <net code="94" name="/SPU0410LR5H/MIC_OUT">
+      <node ref="U10" pin="2"/>
+      <node ref="U4" pin="1"/>
+      <node ref="U11" pin="1"/>
+      <node ref="C4" pin="2"/>
+      <node ref="W1" pin="1"/>
+    </net>
+    <net code="95" name="/SPU0410LR5H/COMP_IN">
+      <node ref="R5" pin="2"/>
+      <node ref="R6" pin="1"/>
+      <node ref="W2" pin="1"/>
+      <node ref="U5" pin="3"/>
+      <node ref="R8" pin="1"/>
+    </net>
+    <net code="96" name="/SPU0410LR5H/VREF">
+      <node ref="U12" pin="2"/>
+      <node ref="U6" pin="3"/>
+      <node ref="U6" pin="5"/>
+      <node ref="U5" pin="4"/>
+      <node ref="C5" pin="1"/>
+      <node ref="C6" pin="1"/>
+      <node ref="C14" pin="1"/>
+    </net>
+    <net code="97" name="/SPU0410LR5H/ADC_IN">
+      <node ref="U7" pin="5"/>
+      <node ref="R4" pin="1"/>
+      <node ref="R3" pin="2"/>
+      <node ref="C8" pin="1"/>
+    </net>
+    <net code="98" name="Net-(C20-Pad2)">
+      <node ref="C20" pin="2"/>
+      <node ref="R13" pin="2"/>
+    </net>
+    <net code="99" name="Net-(C4-Pad1)">
+      <node ref="C4" pin="1"/>
+      <node ref="R7" pin="1"/>
+    </net>
+    <net code="100" name="/SPU0410LR5H/MIC_AMP2_IN">
+      <node ref="C15" pin="1"/>
+      <node ref="W8" pin="1"/>
+      <node ref="U6" pin="6"/>
+      <node ref="R13" pin="1"/>
+      <node ref="R11" pin="2"/>
+    </net>
+    <net code="101" name="/SPU0410LR5H/MIC_AMP1_IN">
+      <node ref="W7" pin="1"/>
+      <node ref="U6" pin="2"/>
+      <node ref="R7" pin="2"/>
+      <node ref="R9" pin="1"/>
+    </net>
+  </nets>
+</export>

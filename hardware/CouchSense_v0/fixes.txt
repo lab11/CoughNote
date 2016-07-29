@@ -1,0 +1,5 @@
+Fix qfn level shifter pad
+fix other level shifter footprint
+fix adc footprint / switch adcs
+fix silkscreen locations and sizes
+fix mic outlines

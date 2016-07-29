@@ -1,0 +1,8 @@
+x Fix QFN level shifter pad
+x fix other level shifter footprint
+x fix adc footprint / switch adcs
+x fix silkscreen locations and sizes
+x fix mic outlines
+x change footprint on tantulum cap to polarized
+fix 0805 cap in bom to 0603
+x double check pin 1 location on ICS-40310, since datasheet is self-contradicting
