@@ -10,7 +10,6 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include "nrf.h"
-#include "spi_master2.h"
 
 
 //******************************************************************
@@ -18,10 +17,7 @@
 //Arguments: none
 //return: 1 if SD Card, 2 if SDHC card, 0 if error
 //******************************************************************
-uint8_t SD_Card_Initialize(SPIModuleNumber n, SPIConfig_t *s, uint32_t p);
-
-// Reinitalizes the SPI module to ensure it's set up for the sd card
-void SD_Card_setup();
+uint8_t SD_Card_Initialize(void);
 
 
 //******************************************************************

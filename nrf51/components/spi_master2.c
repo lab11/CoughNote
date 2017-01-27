@@ -98,7 +98,7 @@ bool spi_master_tx_rx(SPIModuleNumber spi_num, uint16_t transfer_size, const uin
     return true;
 }
 
-bool spi_master_tx(SPIModuleNumber spi_num, uint16_t transfer_size, const uint8_t *tx_data)
+bool spi_master_tx(SPIModuleNumber spi_num, uint32_t transfer_size, const uint8_t *tx_data)
 {
     volatile uint32_t dummyread;
     
@@ -140,7 +140,7 @@ bool spi_master_tx(SPIModuleNumber spi_num, uint16_t transfer_size, const uint8_
     return true;
 }
 
-bool spi_master_rx(SPIModuleNumber spi_num, uint16_t transfer_size, uint8_t *rx_data)
+bool spi_master_rx(SPIModuleNumber spi_num, uint32_t transfer_size, uint8_t *rx_data)
 {
     if(rx_data == 0)
     {

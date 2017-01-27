@@ -6,20 +6,21 @@
 //******************************************************************
 //******************************************************************
 #include "nrf.h"
+#include "boards.h"
 #include <string.h>
 #include <stdio.h>
 #include "nrf_delay.h"
-
+//#include "spi_master.h"
+//#include "simple_uart.h"
 #include "app_gpiote.h"
 #include "nrf_gpio.h"
 #include "common.h"
+//#include "simple_uart.h"
 
 #include "app_util_platform.h"
-#include "nrf_drv_gpiote.h"
-#include "sd_routines.h"
-#include "spi_master2.h"
-#include "led.h"
-#include "board.h"
+#include "nrf_drv_spi.h"
+#include "nrf_drv_config.h"
+#include "SD_Routines.h"
 
 #define FAT_TESTING_ONLY
 
@@ -27,19 +28,17 @@
 #define SD_CS_DEASSERT   PORTB |= 0x02
 
 #define GO_IDLE_STATE            0
-#define SEND_OP_COND             1
+#define SEND_OP_COND            1
 #define SEND_CSD                 9
 #define STOP_TRANSMISSION        12
 #define SEND_STATUS              13
 #define SET_BLOCK_LEN            16
 #define READ_SINGLE_BLOCK        17
 #define READ_MULTIPLE_BLOCKS     18
-#define SET_WRITE_BLOCK_LEN      23
 #define WRITE_SINGLE_BLOCK       24
 #define WRITE_MULTIPLE_BLOCKS    25
 #define ERASE_BLOCK_START_ADDR   32
 #define ERASE_BLOCK_END_ADDR     33
-#define SD_APP_CMD55             55
 #define ERASE_SELECTED_BLOCKS    38
 #define CRC_ON_OFF               59
 
@@ -61,65 +60,85 @@ uint32_t startBlock;
 uint32_t totalBlocks;
 uint8_t sd_buffer[512];
 
-static SPIConfig_t *spi_config;
-static SPIModuleNumber spi_num;
 
-static uint32_t cs_pin;
-static nrf_drv_gpiote_out_config_t cs_config = GPIOTE_CONFIG_OUT_SIMPLE(NRF_GPIOTE_INITIAL_VALUE_HIGH);
-
-static uint8_t spi_txbuf[2] = {};
-static uint8_t spi_rxbuf[2] = {}; 
+extern void uart_print(const char * string);
+static const nrf_drv_spi_t spi_master = NRF_DRV_SPI_INSTANCE(0);
 
 //******************************************************************
 //Function: to initialize SPI and  SD/SDHC  Cards
 //Arguments: none
 //return: 1 if SD Card, 2 if SDHC card, 0 if error
 //******************************************************************
-uint8_t SD_Card_Initialize(SPIModuleNumber n, SPIConfig_t *s, uint32_t p) {
-    spi_config = s;
-    spi_num = n;
-    cs_pin = p;
-    uint8_t ret = 0;
+uint8_t SD_Card_Initialize(void)
+{
+    //        SDCard_spi=spi_master_init(SPI0,SPI_MODE0,0 );
 
-    nrf_drv_gpiote_out_init(cs_pin, &cs_config);
-    nrf_drv_gpiote_out_set(cs_pin);
-    spi_master_init(spi_num, spi_config);
+
+//    char buf[256];
+    uint8_t ret;
+    uint32_t err = NRF_SUCCESS;
+
+    uart_print(__func__);
+    nrf_gpio_cfg_output(MMCSD_PIN_SELECT);
+    nrf_gpio_pin_set(MMCSD_PIN_SELECT);
+
+
+    nrf_drv_spi_config_t conf =
+    {
+        .ss_pin = NRF_DRV_SPI_PIN_NOT_USED,
+        .irq_priority = APP_IRQ_PRIORITY_LOW,
+        .orc = 0xCC,
+        .frequency = NRF_DRV_SPI_FREQ_8M,
+        .mode = NRF_DRV_SPI_MODE_0,
+        .bit_order = NRF_DRV_SPI_BIT_ORDER_MSB_FIRST,
+        .sck_pin = SPIM0_SCK_PIN,
+        .mosi_pin = SPIM0_MOSI_PIN,
+        .miso_pin = SPIM0_MISO_PIN
+    };
+
+    err = nrf_drv_spi_init(&spi_master, &conf, NULL); // NULL means blocking I/O
+
+    {}
+
+    APP_ERROR_CHECK(err);
 
     if(SD_init())
     {
-        if(Initialize_SDHC()) {
+        if(Initialize_SDHC())
             ret = 0;
-        }
-        else {
+        else
             ret = 2;			//SDHC card
-        }
     }
-    else {
+    else
         ret = 1;				// SD card
-    }
+
+//    sprintf(buf, "init: %d %u", ret, (unsigned int)err);
+//    uart_print(buf);
 
     return ret;
 }
 
-void SD_card_setup() {
-    spi_master_init(spi_num, spi_config);
-}
+uint8_t spi_xfer(uint8_t data)
+{
+    uint8_t spi_txbuf[2];
+    uint8_t spi_rxbuf[2];
 
-uint8_t spi_xfer(uint8_t data) {
     spi_txbuf[0]=data;
-    spi_master_tx_rx(spi_num, 1, spi_txbuf, spi_rxbuf);
+    nrf_drv_spi_transfer(&spi_master, spi_txbuf, 1, spi_rxbuf, 1);
     return spi_rxbuf[0];
 }
 
+
+
 void mmcsd_select()
 {
-    nrf_drv_gpiote_out_clear(cs_pin);
+    nrf_gpio_pin_clear(MMCSD_PIN_SELECT);
 }
 
 void mmcsd_deselect()
 {
     spi_xfer( 0xFF);
-    nrf_drv_gpiote_out_set(cs_pin);
+    nrf_gpio_pin_set(MMCSD_PIN_SELECT);
 }
 
 uint8_t send_spi(uint8_t spi_msg)
@@ -134,10 +153,12 @@ uint8_t Send_Command(uint8_t cmd[], uint8_t size)
 {
     static uint8_t p;
     static uint8_t resp;
+    //mmcsd_select();
     for(p=0;p<size;p++)
     {
         resp=send_spi(cmd[p]);
     }
+    //mmcsd_deselect();
     return resp;
 }
 
@@ -155,10 +176,12 @@ uint8_t SD_init(void)
     mmcsd_select();
     do
     {
-        for(i=0;i<10;i++) { spi_xfer( 0xFF); }
+        for(i=0;i<10;i++)
+            //SPI_transmit(0xff);
+            spi_xfer( 0xFF);
         response = SD_sendCommand(GO_IDLE_STATE, 0);//send 'reset & go idle' command
         retry++;
-        if(retry>0xfe) { return 1; }//time out
+        if(retry>0xfe) { uart_print("SD init fail..");  return 1; }//time out
     } while(response != 0x01);
 
     mmcsd_deselect();
@@ -240,6 +263,7 @@ bool Initialize_SDHC(void)
         send_spi(0xFF);
         send_spi(0xFF);
         send_spi(0xFF);
+
         return 0;
     }
     else {mmcsd_deselect(); return 1;}
@@ -371,6 +395,7 @@ uint8_t SD_writeSingleBlock(uint32_t startBlock)
         return response;
 
     mmcsd_select();
+    //spi_xfer( 0xFF)
     spi_xfer(0xfe);     //Send start block token 0xfe (0x11111110)
 
     for(i=0; i<512; i++)    //send 512 bytes data
@@ -418,6 +443,7 @@ uint8_t SD_writeSingleBlock_BUFF(uint32_t startBlock,uint8_t *data )
         return response;
 
     mmcsd_select();
+    //spi_xfer( 0xFF)
     spi_xfer(0xfe);     //Send start block token 0xfe (0x11111110)
 
     for(i=0; i<512; i++)    //send 512 bytes data
@@ -446,25 +472,6 @@ uint8_t SD_writeSingleBlock_BUFF(uint32_t startBlock,uint8_t *data )
     mmcsd_deselect();
 
     return 0;
-}
-
-//******************************************************************
-//Function: Do the setup for writing multiple blocks to an SD card
-//param: block address
-//param: pointer to data buffer(data buffer should be of size 512
-//return: unsigned char; will be 0 if no error,
-// otherwise the response byte will be sent
-//******************************************************************
-void SD_prepareWriteMultipleBlock(uint32_t startBlock, uint32_t blockLen) {
-    uint8_t response = 0;
-
-    response = SD_sendCommand(SD_APP_CMD55, 0);
-    if(response != 0) { return response; }
-
-    response = SD_sendCommand(SET_WRITE_BLOCK_LEN, blockLen);
-    if(response != 0) { return response; }
-
-    return response;
 }
 
 

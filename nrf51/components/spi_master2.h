@@ -144,7 +144,7 @@ bool spi_master_tx_rx(SPIModuleNumber spi_num, uint16_t transfer_size, const uin
  * @retval true if transmit/reveive of transfer_size were completed.
  * @retval false if transmit/reveive of transfer_size were not complete and tx_data/rx_data points to invalid data.
  */
-bool spi_master_tx(SPIModuleNumber spi_num, uint16_t transfer_size, const uint8_t *tx_data);
+bool spi_master_tx(SPIModuleNumber spi_num, uint32_t transfer_size, const uint8_t *tx_data);
 /**
  * Transfer/Receive data over SPI bus.
  *
@@ -157,7 +157,7 @@ bool spi_master_tx(SPIModuleNumber spi_num, uint16_t transfer_size, const uint8_
  * @retval true if transmit/reveive of transfer_size were completed.
  * @retval false if transmit/reveive of transfer_size were not complete and tx_data/rx_data points to invalid data.
  */
-bool spi_master_rx(SPIModuleNumber spi_num, uint16_t transfer_size, uint8_t *rx_data);
+bool spi_master_rx(SPIModuleNumber spi_num, uint32_t transfer_size, uint8_t *rx_data);
 
 /**
  *@}

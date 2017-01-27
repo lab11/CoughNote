@@ -1,10 +1,11 @@
-#ifndef RV3049_H_
-#define RV3049_H_
+#pragma once
 #include <stdint.h>
 #include "spi_master2.h"
+
 // Addresses for the RTC registers
-#define RV3049_PAGE_ADDR_CONTROL     0x00
-#define RV3049_PAGE_ADDR_CLOCK       0x08
+#define RV3049_PAGE_ADDR_CTRL_1      0x00
+#define RV3049_PAGE_ADDR_CTRL_STATUS 0x03
+#define RV3049_PAGE_ADDR_CLOCK_SEC   0x08
 #define RV3049_PAGE_ADDR_ALARM       0x10
 #define RV3049_PAGE_ADDR_TIMER       0x18
 #define RV3049_PAGE_ADDR_TEMP        0x20
@@ -13,7 +14,6 @@
 #define RV3049_PAGE_ADDR_RAM         0x38
 
 #define RV3049_READ_LEN_TIME 7
-
 #define RV3049_WRITE_LEN_TIME 7
 
 #define RV3049_SET_READ_BIT(command) (0x80 | command)
@@ -59,5 +59,5 @@ typedef struct {
 void rv3049_init(SPIModuleNumber n, SPIConfig_t *s, uint32_t p);
 void rv3049_read_time(rv3049_time_t* time);
 void rv3049_set_time(rv3049_time_t* time);
-
-#endif
+uint8_t rv3049_read_reg(uint8_t addr);
+void rv3049_write_reg(uint8_t addr, uint8_t reg);

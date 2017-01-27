@@ -1,8 +1,8 @@
 #set the date variables
-RTC_SECONDS = $(shell date +%S)
-RTC_MINUTES = $(shell date +%M)
-RTC_HOURS = $(shell date +%H)
-RTC_DAYS = $(shell date +%d | sed 's/^0*//')
+RTC_SECONDS = $(shell date +%S | sed 's/^0*\([1-9]\)/\1/;s/^0*$/0/\n\n/')
+RTC_MINUTES = $(shell date +%M | sed 's/^0*\([1-9]\)/\1/;s/^0*$/0/\n\n/')
+RTC_HOURS = $(shell date +%H | sed 's/^0*\([1-9]\)/\1/;s/^0*$/0/\n\n/')
+RTC_DAYS = $(shell date +%d | sed 's/^0*\([1-9]\)/\1/;s/^0*$/0/\n\n/')
 RTC_WEEKDAY = $(shell date +%A | tr a-z A-Z)
 RTC_MONTH = $(shell date +%B | tr a-z A-Z)
 RTC_YEAR = $(shell date +%Y)
