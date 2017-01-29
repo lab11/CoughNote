@@ -1,0 +1,8 @@
+Needed:
+Null Test
+FRAM test
+ADC-Test
+FRAM-ADC connected test
+SD-Card test
+
+Finished:

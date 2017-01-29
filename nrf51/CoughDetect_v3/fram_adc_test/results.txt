@@ -1,0 +1,13 @@
+Nothing but pin configurations. Same result with a gpio interrupt set 
+6 mA 
+
+GPIO pin configurations plus simple_ble_init.
+3 mA
+
+Gpio pin config, simple_ble_init, adv_name_only
+3 mA
+
+gpio pin config, simple_ble_init, adv_name_only, 5s timer
+3 mA (1.7 mA according to fluke)
+
+Squall board: 4 uA...so it's the fram or the rtc. Maybe I need to init the rtc? 
