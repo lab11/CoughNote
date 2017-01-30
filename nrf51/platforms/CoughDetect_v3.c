@@ -4,9 +4,39 @@
 #include <stdbool.h>
 #include "led.h"
 
+SPIConfig_t adc_spi = {
+                            .Config.Fields.BitOrder = SPI_BITORDER_MSB_LSB,
+                            .Config.Fields.Mode     = SPI_MODE3,
+                            .Frequency              = SPI_FREQ_2MBPS,
+                            .Pin_SCK                = ADC_SCK,
+                            .Pin_MOSI               = DUMMY_CS,
+                            .Pin_MISO               = ADC_MISO,
+                            .Pin_CSN                = ADC_CS
+};
+
+SPIConfig_t fram_spi =  {
+                                .Config.Fields.BitOrder = SPI_BITORDER_MSB_LSB,
+                                .Config.Fields.Mode     = SPI_MODE3,
+                                .Frequency              = SPI_FREQ_2MBPS,
+                                .Pin_SCK                = FRAM_SCK_2,
+                                .Pin_MOSI               = FRAM_MOSI_2,
+                                .Pin_MISO               = FRAM_MISO,
+                                .Pin_CSN                = DUMMY_CS
+};
+
+SPIConfig_t nuc_rtc_spi = {
+                                .Config.Fields.BitOrder = SPI_BITORDER_MSB_LSB,
+                                .Config.Fields.Mode     = SPI_MODE1,
+                                .Frequency              = SPI_FREQ_500KBPS,
+                                .Pin_SCK                = NUC_SPI_SCK_PIN,
+                                .Pin_MOSI               = NUC_SPI_MOSI_PIN,
+                                .Pin_MISO               = NUC_SPI_MISO_PIN,
+                                .Pin_CSN                = DUMMY_CS
+};
+
 uint32_t pin_list[29] = {
     NUC_FRAM_CS,
-    NUC_FRAM_WP, 
+    NUC_FRAM_WP,
     NUC_FRAM_HOLD,
     NUC_RV3049_CS,
     NUC_RV3049_INT,
@@ -38,7 +68,6 @@ static bool check_pin(uint32_t p) {
     return false;
 }
 
-
 void configure_platform_pins() {
     for(uint32_t i=0;i<32;i++) {
         if(!check_pin(i)) {
@@ -47,10 +76,10 @@ void configure_platform_pins() {
         }
     }
     // Configure nucleum SPI pins
-    nrf_gpio_cfg_output(NUC_SPI_MOSI_PIN); 
+    nrf_gpio_cfg_output(NUC_SPI_MOSI_PIN);
     nrf_gpio_cfg_output(NUC_SPI_SCK_PIN);
     nrf_gpio_cfg_input(NUC_SPI_MISO_PIN, NRF_GPIO_PIN_NOPULL);
-    nrf_gpio_pin_clear(NUC_SPI_MOSI_PIN); 
+    nrf_gpio_pin_clear(NUC_SPI_MOSI_PIN);
     nrf_gpio_pin_clear(NUC_SPI_SCK_PIN);
 
     // Configure nucleum FRAM
@@ -80,7 +109,7 @@ void configure_platform_pins() {
     // Congigure FRAM pins
     nrf_gpio_cfg_output(FRAM_CS);
     nrf_gpio_cfg_input(FRAM_MISO, NRF_GPIO_PIN_NOPULL);
-    nrf_gpio_cfg_output(FRAM_MOSI_2); 
+    nrf_gpio_cfg_output(FRAM_MOSI_2);
     nrf_gpio_cfg_output(FRAM_SCK_2);
     nrf_gpio_cfg_output(FRAM_SPI_SEL);
     nrf_gpio_pin_set(FRAM_CS);
@@ -95,7 +124,7 @@ void configure_platform_pins() {
     nrf_gpio_cfg_input(SD_MISO, NRF_GPIO_PIN_NOPULL);
     nrf_gpio_cfg_output(SD_SCK);
     nrf_gpio_cfg_output(SD_MOSI);
-    
+
     nrf_gpio_pin_set(SD_CS);
     nrf_gpio_pin_set(SD_ENABLE);
     nrf_gpio_pin_clear(SD_SCK);
@@ -104,6 +133,7 @@ void configure_platform_pins() {
     // Configure comparator pins
     nrf_gpio_cfg_input(COMP1, NRF_GPIO_PIN_NOPULL);
     nrf_gpio_cfg_input(COMP2, NRF_GPIO_PIN_NOPULL);
+
 }
 
 void configure_fram_fram() {

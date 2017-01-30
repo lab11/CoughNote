@@ -1,5 +1,7 @@
 #pragma once
 
+#include "spi_master2.h"
+
 #define DUMMY_CS 24
 
 // FRAM chip pins
@@ -66,6 +68,12 @@
 #define SPI_CS_PIN		10
 #define SD_ENABLE_PIN	17		//power gates sd card
 #define CD_PIN			21
+
+/* Various spi configurations defined in CoughDetect_v3.c */
+extern SPIConfig_t adc_spi;
+extern SPIConfig_t fram_spi;
+extern SPIConfig_t sdcard_spi;
+extern SPIConfig_t nuc_rtc_spi;
 
 /* This function doesn't initialize functions such as spi, just sets the output/input correctly*/
 void configure_platform_pins();
