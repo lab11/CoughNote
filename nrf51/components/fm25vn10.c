@@ -26,6 +26,10 @@ void fram_init(SPIModuleNumber n, SPIConfig_t *s, uint32_t p) {
     cs_set();
 }
 
+void fram_setup() {
+    spi_master_init(spi_num, spi_config);
+}
+
 uint8_t fram_prepare_write(uint32_t addr) {
     if(!check_args(addr, 0)) {return FRAM_INVALID_ARGS;}
     uint8_t arg = FRAM_WREN;

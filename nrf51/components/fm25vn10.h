@@ -25,7 +25,7 @@ void fram_init(SPIModuleNumber n, SPIConfig_t *s, uint32_t p);
 /* These two are used together for the cough detect project */
 uint8_t fram_prepare_write(uint32_t addr);
 void fram_done_write();
-
+void fram_setup();
 
 uint8_t fram_read(uint32_t addr, uint32_t size, uint8_t *buff);
 uint8_t fram_write(uint32_t addr, uint32_t size, uint8_t *buff);

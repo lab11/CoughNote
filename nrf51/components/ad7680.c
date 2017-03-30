@@ -27,3 +27,9 @@ uint16_t ad7680_read_sample() {
 void ad7680_read_raw_sample(uint8_t *rx_buff) {
 	spi_master_rx(spi_num, 3, rx_buff);
 }
+
+void ad7680_sleep() {
+	uint8_t temp_buf; 
+	ad7680_setup();
+	spi_master_rx(spi_num, 1, &temp_buf);
+}

@@ -1,3 +1,5 @@
+#include <time.h>
+
 #include "rv3049.h"
 #include "spi_master2.h"
 #include "nrf_gpio.h"
@@ -46,7 +48,7 @@ uint8_t rv3049_read_reg(uint8_t addr) {
     uint8_t cmd = RV3049_SET_READ_BIT(addr);
     uint8_t buf;
     set_cs_pin();
-    spi_master_tx(spi_num, 1, cmd);
+    spi_master_tx(spi_num, 1, &cmd);
     spi_master_rx(spi_num, 1, &buf);
     clr_cs_pin();
     return buf;
@@ -67,10 +69,14 @@ void rv3049_init(SPIModuleNumber n, SPIConfig_t *s, uint32_t p) {
   }
 
   // Write the initial values
-  rv3049_time_t start_time = {RTC_SECONDS, RTC_MINUTES, RTC_HOURS, 
+  rv3049_time_t start_time = {RTC_SECONDS, RTC_MINUTES, RTC_HOURS,
                               RTC_DAYS, RTC_WEEKDAY, RTC_MONTH,
                               RTC_YEAR};
   rv3049_set_time(&start_time);
+}
+
+void rv3049_setup() {
+  spi_master_init(spi_num, spi_config);
 }
 
 void rv3049_read_time(rv3049_time_t* time) {
@@ -90,6 +96,37 @@ void rv3049_read_time(rv3049_time_t* time) {
   time->weekday = buf[4];
   time->month   = buf[5];
   time->year    = BCD_TO_BINARY(buf[6])+2000;
+}
+
+void set_unixtime(uint32_t t) {
+  time_t tt = t;
+  struct tm *raw = gmtime(&tt);
+  uint8_t tbuf[8];
+  tbuf[0] = 0; // subsecond
+  tbuf[1] = (uint8_t) (raw->tm_sec);
+  tbuf[2] = (uint8_t) (raw->tm_min);
+  tbuf[3] = (uint8_t) (raw->tm_hour);
+  tbuf[4] = 1; // pretend it's monday
+  tbuf[5] = (uint8_t) (raw->tm_mday);
+  tbuf[6] = (uint8_t) (raw->tm_mon + 1);
+  uint16_t raw_year = (uint8_t) (raw->tm_year); // this is years since 1900
+  rv3049_time_t t_new = {tbuf[1], tbuf[2], tbuf[3],
+                         tbuf[5], 1, tbuf[6], raw_year + 1900}; 
+  rv3049_setup();
+  rv3049_set_time(&t_new);
+}
+
+uint32_t get_unixtime() {
+  struct tm time_converter;
+  rv3049_setup();
+  rv3049_time_t raw_time;
+  rv3049_read_time(&raw_time);
+  time_converter.tm_year = raw_time.year - 1900;
+  time_converter.tm_mon = raw_time.month - 1;
+  time_converter.tm_mday = raw_time.days;
+  time_converter.tm_hour = raw_time.hours;
+  time_converter.tm_min = raw_time.minutes;
+  return mktime(&time_converter); 
 }
 
 void rv3049_set_time(rv3049_time_t* time) {

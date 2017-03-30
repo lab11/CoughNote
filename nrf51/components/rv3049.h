@@ -58,6 +58,9 @@ typedef struct {
 
 void rv3049_init(SPIModuleNumber n, SPIConfig_t *s, uint32_t p);
 void rv3049_read_time(rv3049_time_t* time);
+uint32_t get_unixtime();
+void set_unixtime(uint32_t t);
 void rv3049_set_time(rv3049_time_t* time);
 uint8_t rv3049_read_reg(uint8_t addr);
 void rv3049_write_reg(uint8_t addr, uint8_t reg);
+void rv3049_setup();
