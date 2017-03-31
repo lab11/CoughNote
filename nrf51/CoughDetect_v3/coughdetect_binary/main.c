@@ -64,7 +64,7 @@ static ble_advdata_manuf_data_t mfgdata; // configuration data for BLE advertise
 static simple_ble_service_t cough_service = {
     .uuid128 = {{0x9c, 0x16, 0x35, 0x86, 0x30, 0x2b, 0x40, 0xb9, 0x89, 0x1f, 0x8a, 0x4c, 0x02, 0x19, 0x2c, 0xc5}}
 };
-static simple_ble_char_t base_station_rdy_char = {.uuid16 = 0x0201};
+static simple_ble_char_t base_station_rdy_char = {.uuid16 = 0x0201}; // base station has to tell us it's ready
 static uint8_t base_station_rdy_buf = 0;
 static simple_ble_char_t sys_time_char = {.uuid16 = 0x0202}; // character which we will use to reset our time
 static uint32_t sys_time_buf = 0; // where we store the time the gateway tells us.
@@ -81,24 +81,25 @@ static simple_ble_config_t ble_config = {
 static bool ble_connected = false; 
 static bool base_station_ready = false;
 
-/* 
+
 void ble_evt_connected(ble_evt_t* p_ble_evt) {
     ble_connected = true;
-    configure_fram_fram(); 
 }
 
 void services_init() {
     simple_ble_add_service(&cough_service);
     simple_ble_add_characteristic(1, 1, 1, 0, // read, write, notify, vlen
                                   4, (uint8_t *) &sys_time_buf, &cough_service, &sys_time_char); // size, buffer, service, char
+    simple_ble_add_characteristic(0, 1, 0, 0, // read, write, notify, vlen
+                                  1, &base_station_rdy_buf, &cough_service, &base_station_rdy_char); // size, buffer, service, char
 }
 
 void ble_evt_write(ble_evt_t *p_ble_evt) {
-    if(simple_ble_is_char_event(p_ble_evt, &base_station_rdy_char)) {
-       base_station_ready = true;
-    }
-    else if(simple_ble_is_char_event(p_ble_evt, &sys_time_char)) {
-        set_unixtime(sys_time_buf);        
+    if(simple_ble_is_char_event(p_ble_evt, &sys_time_char)) {
+        uint32_t ctime = get_unixtime();
+        set_unixtime(sys_time_buf);
+        sys_time_buf = ctime;
+        simple_ble_notify_char(&sys_time_char);        
     }
 }
 
@@ -107,7 +108,7 @@ void ble_evt_disconnected(ble_evt_t *p_ble_evt) {
     base_station_ready = false;
     nrf_drv_gpiote_in_event_enable(COMP2, true);
 }
-*/ 
+
 
 void comp1_handler(void *p_context) {
     nrf_drv_gpiote_in_event_disable(COMP1);
@@ -130,7 +131,6 @@ void comp2_handler(void *p_context) {
 void sample_timer_handler(void *p_context) {
     app_status = STOP_SAMPLE;
 }
-
 
 static volatile uint8_t checker = 0;
 void junk_func1() {
@@ -170,6 +170,7 @@ int main(void) {
     nrf_drv_gpiote_in_event_enable(COMP2, true);
     //nrf_drv_gpiote_in_init(COMP1, &comp_config, comp1_handler);
     //nrf_drv_gpiote_in_event_enable(COMP1, true);
+
     while (1) {
         if(app_status == START_SAMPLE) {
             /* Sample to FRAM for a second */
@@ -178,6 +179,7 @@ int main(void) {
             fram_prepare_write(0);
             ad7680_init(SPI0, &adc_spi);
             configure_fram_adc();
+            sd_ble_gap_adv_stop();
             app_timer_start(sample_timer, sample_length, NULL);
             while(app_status == START_SAMPLE) {
                 ad7680_read_raw_sample(adc_buf);
@@ -192,55 +194,54 @@ int main(void) {
                 cough_adv_buf[i+1] = utime >> 8 * (3-i);
                 cough_adv_buf[i+5] = cough_count >> 8 * (3-i);
             }
-            simple_adv_manuf_data(&mfgdata);
-            led_on(LED_RED);
-            /* Write data from FRAM to ADC */
-            simple_logger_start();
-            simple_logger_fast_log_binary((void *)&utime, 4);
-            simple_logger_fast_log_binary((void *)&sample_counter, 4);
-            uint8_t data_buf[600];
-            uint32_t position = 0; // our current position in the
-            configure_fram_fram();
-            fram_init(SPI0, &fram_spi, FRAM_CS);
-            while(sample_counter > 200) {
-                fram_read(position, 600, data_buf);
-                for(uint32_t i=0; i < 600; i+=3) {
-                    // strip leading and trailing zeroes from each reading
-                    uint16_t true_sample = 0;
-                    true_sample += data_buf[i];
-                    true_sample <<= 8;
-                    true_sample += data_buf[i+1];
-                    true_sample <<= 4;
-                    true_sample += data_buf[i+2] >> 4;
-                    simple_logger_fast_log_binary((void *)&true_sample, 2);
+            /* Write data from FRAM to ADC if there is actually an sdcard in there */
+            if(nrf_gpio_pin_read(SD_DETECT) == 0) {
+                led_on(LED_RED);
+                simple_logger_start();
+                simple_logger_fast_log_binary((void *)&utime, 4);
+                simple_logger_fast_log_binary((void *)&sample_counter, 4);
+                uint8_t data_buf[600];
+                uint32_t position = 0; // our current position in the
+                configure_fram_fram();
+                fram_init(SPI0, &fram_spi, FRAM_CS);
+                while(sample_counter > 200) {
+                    fram_read(position, 600, data_buf);
+                    for(uint32_t i=0; i < 600; i+=3) {
+                        // strip leading and trailing zeroes from each reading
+                        uint16_t true_sample = 0;
+                        true_sample += data_buf[i];
+                        true_sample <<= 8;
+                        true_sample += data_buf[i+1];
+                        true_sample <<= 4;
+                        true_sample += data_buf[i+2] >> 4;
+                        simple_logger_fast_log_binary((void *)&true_sample, 2);
+                    }
+                    sample_counter -= 200;
+                    position += 600;
                 }
-                sample_counter -= 200;
-                position += 600;
-            }
-            fram_read(position, sample_counter * 3, data_buf);
-            junk_func1();
-            for(uint32_t j=0; j < sample_counter; j+= 3) {
-                // strip leading and trailing zeroes from each reading
-                uint32_t true_sample = 0;
-                true_sample += data_buf[j];
-                true_sample <<= 8;
-                true_sample += data_buf[j+1];
-                true_sample <<= 4;
-                true_sample += data_buf[j+2] >> 4;
-                simple_logger_fast_log_binary((void *)true_sample, 2);
-            }
-            led_off(LED_RED);
-            simple_logger_stop();
+                fram_read(position, sample_counter * 3, data_buf);
+                junk_func1();
+                led_off(LED_RED);
+                for(uint32_t j=0; j < sample_counter; j+= 3) {
+                    // strip leading and trailing zeroes from each reading
+                    uint32_t true_sample = 0;
+                    true_sample += data_buf[j];
+                    true_sample <<= 8;
+                    true_sample += data_buf[j+1];
+                    true_sample <<= 4;
+                    true_sample += data_buf[j+2] >> 4;
+                    simple_logger_fast_log_binary((void *)true_sample, 2);
+                }
+                simple_logger_stop();
+            }                
             led_off(LED_BLUE);
             /* Reset sample counter and re-enable gpio interrupt*/
             sample_counter = 0;
             nrf_drv_gpiote_in_event_enable(COMP2, true);
             //nrf_drv_gpiote_in_event_enable(COMP1, true);
         }
-        if(ble_connected && base_station_ready) {
-            sys_time_buf = get_unixtime();
-            simple_ble_notify_char(&sys_time_char);
-        }
+        /* Restart Advertising */
+        simple_adv_manuf_data(&mfgdata);
         sd_power_mode_set(NRF_POWER_MODE_LOWPWR);
         sd_app_evt_wait();
     }
