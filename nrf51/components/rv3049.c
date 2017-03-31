@@ -3,6 +3,8 @@
 #include "rv3049.h"
 #include "spi_master2.h"
 #include "nrf_gpio.h"
+#include "led.h"
+#include "CoughDetect_v3.h"
 
 // Check that the application was compiled with the RTC constants for
 // initialization
@@ -13,6 +15,7 @@
 static SPIConfig_t *spi_config;
 static SPIModuleNumber spi_num;
 static uint32_t cs_pin;
+struct tm rv3049_time_converter;
 
 uint8_t rv3049_binary_to_bcd (uint8_t binary) {
   uint8_t out = 0;
@@ -31,6 +34,26 @@ uint8_t rv3049_binary_to_bcd (uint8_t binary) {
   }
   out |= binary;
   return out;
+}
+
+/* https://gmbabar.wordpress.com/2010/12/01/mktime-slow-use-custom-function/ */
+static time_t time_to_epoch ( const struct tm *ltm, int utcdiff) {
+   const int mon_days [] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+   long tyears, tdays, leaps, utc_hrs;
+   int i;
+
+   tyears = ltm->tm_year - 70 ; // tm->tm_year is from 1900.
+   leaps = (tyears + 2) / 4; // no of next two lines until year 2100.
+   //i = (ltm->tm_year - 100) / 100;
+   //leaps -= ( (i/4)*3 + i%4 );
+   tdays = 0;
+   for (i=0; i < ltm->tm_mon; i++) tdays += mon_days[i];
+
+   tdays += ltm->tm_mday-1; // days of month passed.
+   tdays = tdays + (tyears * 365) + leaps;
+
+   utc_hrs = ltm->tm_hour + utcdiff; // for your time zone.
+   return (tdays * 86400) + (utc_hrs * 3600) + (ltm->tm_min * 60) + ltm->tm_sec;
 }
 
 static void clr_cs_pin() {nrf_gpio_pin_clear(cs_pin);}
@@ -77,6 +100,7 @@ void rv3049_init(SPIModuleNumber n, SPIConfig_t *s, uint32_t p) {
 
 void rv3049_setup() {
   spi_master_init(spi_num, spi_config);
+  nrf_gpio_pin_clear(cs_pin);
 }
 
 void rv3049_read_time(rv3049_time_t* time) {
@@ -113,20 +137,22 @@ void set_unixtime(uint32_t t) {
   rv3049_time_t t_new = {tbuf[1], tbuf[2], tbuf[3],
                          tbuf[5], 1, tbuf[6], raw_year + 1900}; 
   rv3049_setup();
+  nrf_gpio_pin_clear(cs_pin);
   rv3049_set_time(&t_new);
 }
 
 uint32_t get_unixtime() {
-  struct tm time_converter;
   rv3049_setup();
   rv3049_time_t raw_time;
   rv3049_read_time(&raw_time);
-  time_converter.tm_year = raw_time.year - 1900;
-  time_converter.tm_mon = raw_time.month - 1;
-  time_converter.tm_mday = raw_time.days;
-  time_converter.tm_hour = raw_time.hours;
-  time_converter.tm_min = raw_time.minutes;
-  return mktime(&time_converter); 
+  rv3049_time_converter.tm_year = raw_time.year - 1900;
+  rv3049_time_converter.tm_mon = raw_time.month - 1;
+  rv3049_time_converter.tm_mday = raw_time.days;
+  rv3049_time_converter.tm_hour = raw_time.hours;
+  rv3049_time_converter.tm_min = raw_time.minutes;
+  rv3049_time_converter.tm_sec = raw_time.seconds;
+
+  return mktime(&rv3049_time_converter); 
 }
 
 void rv3049_set_time(rv3049_time_t* time) {
