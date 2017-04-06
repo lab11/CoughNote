@@ -85,8 +85,10 @@ void rv3049_init(SPIModuleNumber n, SPIConfig_t *s, uint32_t p) {
   nrf_gpio_cfg_output(cs_pin);
   nrf_gpio_pin_clear(cs_pin);
 
+
   // Make sure PON bit is cleared, otherwise the RTC won't start counting
   uint8_t ctrl_reg = rv3049_read_reg(RV3049_PAGE_ADDR_CTRL_STATUS);
+
   if(ctrl_reg & 0x20) {
       rv3049_write_reg(RV3049_PAGE_ADDR_CTRL_STATUS, ctrl_reg & 0xDF);
   }
@@ -95,6 +97,7 @@ void rv3049_init(SPIModuleNumber n, SPIConfig_t *s, uint32_t p) {
   rv3049_time_t start_time = {RTC_SECONDS, RTC_MINUTES, RTC_HOURS,
                               RTC_DAYS, RTC_WEEKDAY, RTC_MONTH,
                               RTC_YEAR};
+
   rv3049_set_time(&start_time);
 }
 
