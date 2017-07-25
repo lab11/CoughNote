@@ -42,7 +42,7 @@
 #define PHYSWEB URL "goo.gl/fill_in_something"
 #define BLE_ADV_DATA_SIZE 9 // 1 id + 4 sample time + 4 cough count
 #define DATA_LOG_SIZE 6000
-#define M_COUGH_ID 2
+#define M_COUGH_ID 1
 #define DATA_BUF_SIZE 1300
 
 typedef enum {
@@ -59,7 +59,6 @@ static app_status_types app_status = STOP_SAMPLE; // Status used in main loop to
 nrf_drv_gpiote_in_config_t comp_config = GPIOTE_CONFIG_IN_SENSE_LOTOHI(false);
 static uint32_t cough_count = 0;
 static uint32_t sample_utime = 0;
-static uint16_t true_sample = 0; 
 static uint8_t data_buf[DATA_BUF_SIZE] = {};
 static uint32_t sample_start_time = 0;
 static uint32_t total_sampling_time = 0;
@@ -152,7 +151,6 @@ int main(void) {
     // Configure pins and sleep level, init RTC
     configure_platform_pins();
     if(!nrf_drv_gpiote_is_init()) {nrf_drv_gpiote_init();}
-
     rv3049_init(SPI0, &nuc_rtc_spi, NUC_RV3049_CS);
 
     // Setup BLE advertisements
@@ -227,9 +225,6 @@ int main(void) {
                     fram_read(position, 1200, data_buf);
                     simple_logger_fast_log_binary((void *) data_buf, 1200);
                     position += 1200;
-                    if(i==0) {
-                        junk_func1();
-                    }
                 }
                 simple_logger_stop();
                 led_off(LED_RED);
